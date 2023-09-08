@@ -106,4 +106,9 @@ class Product extends Model
         $this->attributes['updated_at'] = $updated_at;
     }
 
+    // RELATIONS
+    public function reviews() // falta el type
+    {
+        return $this->hasMany(Review::class);
+    }
 }
