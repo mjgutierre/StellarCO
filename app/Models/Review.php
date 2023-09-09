@@ -66,7 +66,4 @@ class Review extends Model
     {
         $this->attributes['description'] = $description;
     }
-
-    //METHODS
-
 }

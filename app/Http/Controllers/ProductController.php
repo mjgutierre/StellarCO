@@ -25,32 +25,4 @@ class ProductController extends Controller
       $viewData['product'] = Product::findOrFail($id);
       return view('test.product.show')->with('viewData',$viewData);
     }
-
-    public function create(): View
-    {
-      $viewData = [];
-      $viewData['title'] = 'Create Product';
-      return view('test.product.create')->with('viewData',$viewData);
-    }
-
-    public function save(Request $request) : RedirectResponse
-    {
-      Product::validate($request);
-      Product::create($request->all());
-      return back();
-    }
-
-    public function destroy(int $id) : RedirectResponse
-    {
-      Review::where('product_id', $id)->delete();
-      Product::destroy($id);
-      return back();
-    }
-
-    public function update(Request $request, int $id) : RedirectResponse
-    {
-      Product::validate($request);
-      Product::findOrFail($id)->update($request->all());
-      return back();
-    }
 }

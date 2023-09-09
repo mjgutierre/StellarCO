@@ -30,7 +30,7 @@ class Product extends Model
         'location'
     ];
 
-    // GETERS
+    //GETERS
     public function getId(): int
     {
         return $this->attributes['id'];
@@ -71,7 +71,7 @@ class Product extends Model
         return $this->attributes['updated_at'];
     }
 
-    // SETERS
+    //SETERS
     public function setName(string $name): void
     {
         $this->attributes['name'] = $name;
@@ -97,13 +97,13 @@ class Product extends Model
         $this->attributes['location'] = $location;
     }
 
-    // RELATIONS
+    //RELATIONS
     public function reviews() // falta el type
     {
         return $this->hasMany(Review::class);
     }
 
-    //  CLASS METHODS
+    //CLASS METHODS
     public static function validate(Request $request): void
     {
         $request->validate([
