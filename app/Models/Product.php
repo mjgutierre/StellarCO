@@ -97,24 +97,14 @@ class Product extends Model
         $this->attributes['location'] = $location;
     }
 
-    function setCreatedAt(string $created_at): void
-    {
-        $this->attributes['created_at'] = $created_at;
-    }
-
-    function setUpdatedAt(string $updated_at): void
-    {
-        $this->attributes['updated_at'] = $updated_at;
-    }
-
     // RELATIONS
     public function reviews() // falta el type
     {
         return $this->hasMany(Review::class);
     }
 
-    // METHODS
-    public function validate(Request $request): void
+    //  CLASS METHODS
+    public static function validate(Request $request): void
     {
         $request->validate([
             'name' => 'required',
