@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('product.save') }}">
+<form method="POST" action="{{ route('admin.product.save') }}">
   @csrf
   <input type="text" class="form-control mb-2" placeholder="Enter name" name="name" />
   <input type="text" class="form-control mb-2" placeholder="Enter description" name="description" />
