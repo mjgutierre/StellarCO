@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class Product extends Model
 {
@@ -110,5 +111,17 @@ class Product extends Model
     public function reviews() // falta el type
     {
         return $this->hasMany(Review::class);
+    }
+
+    // METHODS
+    public function validate(Request $request): void
+    {
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'price'=> 'required',
+            'quantity' => 'required',
+            'location' => 'required'
+        ]);
     }
 }

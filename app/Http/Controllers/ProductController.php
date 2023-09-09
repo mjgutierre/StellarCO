@@ -34,14 +34,8 @@ class ProductController extends Controller
 
     public function save(Request $request) : RedirectResponse
     {
-      $request->validate([
-        'name' => 'required',
-        'description' => 'required',
-        'price'=> 'required'
-      ]);
-      
+      Product->validate($request);
       Product::create($request->all());
-
       return back();
     }
 
@@ -54,16 +48,8 @@ class ProductController extends Controller
 
     public function update(Request $request, int $id) : RedirectResponse
     {
-      $request->validate([
-        'name' => 'required',
-        'description' => 'required',
-        'quantity' => 'required',
-        'location' => 'required',
-        'price'=> 'required'
-      ]);
-
+      Product->validate($request);
       Product::findOrFail($id)->update($request->only(['name','description','quantity','location','price']));
-
       return back();
     }
 }
