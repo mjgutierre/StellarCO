@@ -1,0 +1,95 @@
+/* carrusel */
+header {
+    margin-top: 80px;
+}
+
+.carousel-item {
+    height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.bg-secondary {
+    background-color: #143253 !important;
+}
+
+.static-image {
+    background-image: url('/images/carrusel1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 450px;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.overlay-content h5 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.overlay-content p {
+    font-size: 18px;
+}
+
+.overlay-content a.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #143253;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+
+}
+
+.overlay-content a.btn:hover {
+    background-color: #264f7a;
+}
+
+
+/* footer */
+.copyright {
+    background-color: #143253;
+}
+
+.full-width {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #143253;
+    z-index: 999;
+}
+
+/* barra de navegacion */
+.navbar {
+    background-color: #143253 !important;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+}
+
+.navbar-brand {
+    color: white;
+}
