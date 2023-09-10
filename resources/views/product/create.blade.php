@@ -3,6 +3,6 @@
 @section('content')
 <div>
 </div>
-@stop
+@endsection
 
 
