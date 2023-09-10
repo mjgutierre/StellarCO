@@ -13,7 +13,7 @@
         <p>{{ $product->getDescription() }}</p>
         <p>{{ $product->getPrice() }}</p>
         <p>{{ $product->getQuantity() }}</p>
-         <p>{{ $product->getLocation() }}</p>
+        <p>{{ $product->getLocation() }}</p>
       </div>
     </div>
   </div>
