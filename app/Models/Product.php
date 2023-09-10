@@ -16,6 +16,7 @@ class Product extends Model
      * $this->attributes['name'] - string - contains the product name
      * $this->attributes['description'] - string - contains the description of the product
      * $this->attributes['price'] - int - contains the product price
+     * $this->attributes['image'] - string - contains the product image
      * $this->attributes['quantity'] - int - contains the product price
      * $this->attributes['location'] - string - contains the location of the product
      * this->attributes['created_at'] - string - contains the date of creation of the product
@@ -27,6 +28,7 @@ class Product extends Model
         'description',
         'price',
         'quantity',
+        'image',
         'location'
     ];
 
@@ -61,6 +63,11 @@ class Product extends Model
         return $this->attributes['location'];
     }
 
+    public function getImage(): string
+    {
+        return $this->attributes['image'];
+    }
+
     public function getCreatedAt(): string
     {
         return $this->attributes['created_at'];
@@ -90,6 +97,11 @@ class Product extends Model
     function setQuantity(int $quantity): void
     {
         $this->attributes['quantity'] = $quantity;
+    }
+
+    public function setImage(string $image) : void 
+    {
+      $this->attributes['image'] = $image; 
     }
 
     function setLocation(string $location): void

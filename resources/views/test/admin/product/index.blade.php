@@ -4,6 +4,7 @@
     <div class="card">
       <img src="https://laravel.com/img/logotype.min.svg" class="card-img-top img-card">
       <div class="card-body text-center">
+        <img src="{{ asset('/storage/'.$product->getImage()) }}">
         <a 
           href="{{ route('admin.product.show', ['id'=> $product->getId()]) }}" 
           class="btn bg-primary text-white"
