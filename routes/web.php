@@ -28,3 +28,6 @@ Route::put('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductContr
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index');
 Route::get('/products', 'App\Http\Controllers\ProductController@index')->name("product.index");
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->name("product.show");
+
+Auth::routes();
+
