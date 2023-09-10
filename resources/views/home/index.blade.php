@@ -1,7 +1,7 @@
+<!-- Autor del codigo Maria Jose Gutierrez Estrada -->
 @extends('layouts.app')
 @section('title', 'Home Page - StellarCO')
 @section('content')
-
 <header>
   <div class="static-image">
     <div class="overlay-content">
