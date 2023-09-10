@@ -51,20 +51,20 @@ class AdminProductController extends Controller
         $newProduct->save(); 
       }
       
-      return back();
+      return redirect()->route('admin.product.index');
     }
 
     public function destroy(int $id) : RedirectResponse
     {
       Review::where('product_id', $id)->delete();
       Product::destroy($id);
-      return back();
+      return redirect()->route('admin.product.index');
     }
 
     public function update(Request $request, int $id) : RedirectResponse
     {
       Product::validate($request);
       Product::findOrFail($id)->update($request->all());
-      return back();
+      return redirect()->route('admin.product.index');
     }
 }
