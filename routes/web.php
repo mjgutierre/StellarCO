@@ -26,6 +26,9 @@ Route::get('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductContr
 Route::delete('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@destroy')->name("admin.product.destroy");
 Route::put('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@update')->name("admin.product.update");
 
+//ADMIN-STATISTICS
+Route::get('/admin/statistics', 'App\Http\Controllers\Admin\AdminStatisticsController@index')->name("admin.statistics.index");
+
 //PRODUCTS
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index');
 Route::get('/products', 'App\Http\Controllers\ProductController@index')->name("product.index");

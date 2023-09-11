@@ -99,6 +99,11 @@ header {
     color: white;
 }
 
+.analytics{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 30px;
+}
 /* products index-------------------------------------------------------------------------------------------------------*/
 .card {
     width: 300px; 
