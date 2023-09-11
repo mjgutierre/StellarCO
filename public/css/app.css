@@ -224,3 +224,33 @@ header {
 .breadcrumbs a:hover {
     font-weight: bold;
 }
+
+/* create */
+.custom-card {
+    width: 460px; 
+}
+
+.create {
+    margin-top: 50px;
+}
+
+.btn {
+    text-align: center; 
+    margin-top: 5px;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #ad1111;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #d44747;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px; 
+}

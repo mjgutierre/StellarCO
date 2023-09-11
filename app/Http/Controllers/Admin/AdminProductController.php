@@ -18,22 +18,24 @@ class AdminProductController extends Controller
         $viewData = [];
         $viewData['title'] = 'Products';
         $viewData['products'] = Product::all();
-        return view('test.admin.product.index')->with('viewData',$viewData);
+        return view('admin.product.index')->with('viewData',$viewData);
     }
 
     public function show(int $id): View
     {
-      $viewData = [];
-      $viewData['title'] = 'Product';
-      $viewData['product'] = Product::findOrFail($id);
-      return view('test.admin.product.show')->with('viewData',$viewData);
+      $product = Product::findOrFail($id);
+      $viewData = [
+        'title' => 'Product',
+        'products' => collect([$product]) 
+      ];
+      return view('admin.product.show')->with('viewData',$viewData);
     }
 
     public function create(): View
     {
       $viewData = [];
       $viewData['title'] = 'Create Product';
-      return view('test.admin.product.create')->with('viewData',$viewData);
+      return view('admin.product.create')->with('viewData',$viewData);
     }
 
     public function save(Request $request) : RedirectResponse

@@ -2,11 +2,11 @@
 @section('title', $viewData['title'])
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center align-items-center mt-5">
         <div class="col-md-6">
-            <div class="card">
+            <div class="card custom-card create">
                 <div class="card-body">
-                    <h5 class="card-title">Crea tu cohete</h5>
+                    <h5 class="card-title">Crea un nuevo cohete</h5>
                     <form method="POST" action="{{ route('admin.product.save') }}">
                         @csrf
                         <div class="mb-3">
@@ -28,6 +28,10 @@
                         <div class="mb-3">
                             <label for="location" class="form-label">Ubicación</label>
                             <input type="text" class="form-control" id="location" name="location" placeholder="Ingrese la ubicación" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Imagen" class="form-label">Imagen</label>
+                            <input class="form-control" type="file" name="image">
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </form>
