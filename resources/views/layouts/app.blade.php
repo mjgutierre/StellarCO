@@ -31,7 +31,7 @@
                         <a class="nav-link" href="#">Estadisticas</a>
                     </li>
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
-                    @guest
+                    @guest 
                     <a class="nav-link active" href="{{ route('login') }}">Login</a>
                     <a class="nav-link active" href="{{ route('register') }}">Register</a>
                     @else

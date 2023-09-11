@@ -16,12 +16,11 @@
     @csrf
     @method('PUT')
     <h2>Update Product</h2>
-      <input type="text" name="name" class="form-control" value="{{ $viewData['product']->getName() }}" required>
-      <input type="text" name="description" class="form-control" value="{{ $viewData['product']->getDescription() }}" required>
-      <input type="number" name="price" class="form-control" value="{{ $viewData['product']->getPrice() }}" required>
-      <input type="number" name="quantity" class="form-control" value="{{ $viewData['product']->getQuantity() }}" required>
-      <input type="text" name="location" class="form-control" value="{{ $viewData['product']->getLocation() }}" required>
+    <input type="text" name="name" class="form-control" value="{{ $viewData['product']->getName() }}" required>
+    <input type="text" name="description" class="form-control" value="{{ $viewData['product']->getDescription() }}" required>
+    <input type="number" name="price" class="form-control" value="{{ $viewData['product']->getPrice() }}" required>
+    <input type="number" name="quantity" class="form-control" value="{{ $viewData['product']->getQuantity() }}" required>
+    <input type="text" name="location" class="form-control" value="{{ $viewData['product']->getLocation() }}" required>
     <button type="submit" class="btn btn-primary">Update</button>
   </form>
 </div>
-  

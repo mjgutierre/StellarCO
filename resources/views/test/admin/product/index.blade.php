@@ -5,10 +5,7 @@
       <img src="https://laravel.com/img/logotype.min.svg" class="card-img-top img-card">
       <div class="card-body text-center">
         <img src="{{ asset('/storage/'.$product->getImage()) }}">
-        <a 
-          href="{{ route('admin.product.show', ['id'=> $product->getId()]) }}" 
-          class="btn bg-primary text-white"
-        >
+        <a href="{{ route('admin.product.show', ['id'=> $product->getId()]) }}" class="btn bg-primary text-white">
           {{ $product->getName() }}
         </a>
         <p>{{ $product->getDescription() }}</p>
