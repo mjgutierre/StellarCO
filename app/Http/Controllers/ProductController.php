@@ -19,7 +19,7 @@ class ProductController extends Controller
   {
     $product = Product::findOrFail($id);
     $viewData = [
-      'title' => 'Product',
+      'title' => $product['name'],
       'products' => collect([$product]) 
     ];
 
