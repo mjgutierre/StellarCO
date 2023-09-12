@@ -164,6 +164,17 @@ header {
     margin-top: 100px;
 }
 
+.review{
+    width: auto; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin-bottom: 20px; 
+    position: relative;
+    margin-top: 10px;
+    padding: 10px;
+}
+
 /* Estilos para la vista show.blade.php */
 .product-card {
     display: flex;
