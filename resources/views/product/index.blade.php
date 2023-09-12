@@ -12,7 +12,6 @@
                     <p class="card-text">Precio: ${{ $product->getPrice() }}</p>
                     <p class="card-text">Cantidad: {{ $product->getQuantity() }}</p>
                     <p class="card-text">Ubicación: {{ $product->getLocation() }}</p>
-                    <p class="card-text">Descripción: {{ $product->getDescription() }}</p>
                     <a href="{{ route('product.show', ['id'=> $product->getId()]) }}" class="btn btn-primary">CONOCE MÁS</a>
                 </div>
             </div>
