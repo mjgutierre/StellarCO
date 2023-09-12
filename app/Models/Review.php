@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Review extends Model
 {
@@ -14,7 +16,7 @@ class Review extends Model
      * $this->attributes['id'] - int - contains the product primary key (id)
      * $this->attributes['title'] - string - contains the review title
      * $this->attributes['description'] - string - contains the description of the review
-     *  $this->attributes['product_id'] - string - contains the id of the product of this review
+     * $this->attributes['product_id'] - string - contains the id of the product of this review
      * this->attributes['created_at'] - string - contains the date of creation of the product
      * this->attributes['updated_at'] - string - contains the date of update of the product
     */
@@ -56,6 +58,11 @@ class Review extends Model
         return $this->attributes['updated_at'];
     }
 
+    public function getProduct(): Product
+    {
+        return $this->product;
+    }
+
     //SETTERS
     public function setTitle(string $title): void
     {
@@ -65,5 +72,16 @@ class Review extends Model
     public function setDescription(string $description): void
     {
         $this->attributes['description'] = $description;
+    }
+
+    public function setProduct($product): void
+    {
+        $this->product = $product;
+    }
+
+    //RELATIONSHIP
+    public function product(): BelongsTo
+    {
+        return $this->belongsTo(Product::class);
     }
 }

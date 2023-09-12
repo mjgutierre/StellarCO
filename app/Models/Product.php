@@ -2,7 +2,11 @@
 
 namespace App\Models;
 
+
+use App\Models\Review;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
@@ -21,7 +25,8 @@ class Product extends Model
      * $this->attributes['location'] - string - contains the location of the product
      * this->attributes['created_at'] - string - contains the date of creation of the product
      * this->attributes['updated_at'] - string - contains the date of update of the product
-    */
+     * $this->reviews - Review[] - contains teh associated reviews
+     */
 
     protected $fillable = [
         'name',
@@ -78,6 +83,11 @@ class Product extends Model
         return $this->attributes['updated_at'];
     }
 
+    public function getReviews(): Collection
+    {
+        return $this->reviews;
+    }
+
     //SETERS
     public function setName(string $name): void
     {
@@ -109,8 +119,13 @@ class Product extends Model
         $this->attributes['location'] = $location;
     }
 
+    public function setReviews(Collection $reviews): void
+    {
+        $this->reviews = $reviews;
+    }
+
     //RELATIONS
-    public function reviews() // falta el type
+    public function reviews(): HasMany
     {
         return $this->hasMany(Review::class);
     }
