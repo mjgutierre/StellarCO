@@ -58,6 +58,14 @@
                     </div>
                 </div>
 
+                <div class="row mb-3">
+                    <label for="balance" class="col-md-4 col-form-label text-md-end">{{ __('Set your balance') }}</label>
+
+                    <div class="col-md-6">
+                        <input id="balance" type="number" class="form-control" name="balance" required>
+                    </div>
+                </div>
+
                 <div class="row mb-0">
                     <div class="col-md-6 offset-md-4">
                         <button type="submit" class="btn btn-primary">
