@@ -26,7 +26,7 @@ class AdminProductController extends Controller
       $product = Product::findOrFail($id);
       $viewData = [
         'title' => $product['name'],
-        'products' => collect([$product]) 
+        'product' => $product,
       ];
       return view('admin.product.show')->with('viewData',$viewData);
     }
@@ -37,6 +37,38 @@ class AdminProductController extends Controller
       $viewData['title'] = 'Create Product';
       return view('admin.product.create')->with('viewData',$viewData);
     }
+
+    public function getProductsOrderedAsc(): View
+  {
+    $viewData = [];
+    $viewData['title'] = 'Products Ordered by Quantity';
+    $viewData['products'] = Product::orderBy('quantity', 'asc')->get();
+    return view('admin.product.ordered-asc')->with('viewData', $viewData);
+  }
+
+  public function getProductsOrderedDsc(): View
+  {
+    $viewData = [];
+    $viewData['title'] = 'Products Ordered by Quantity';
+    $viewData['products'] = Product::orderBy('quantity', 'desc')->get();
+    return view('admin.product.ordered-dsc')->with('viewData', $viewData);
+  }
+
+  public function getProductsOrderedNameAsc(): View
+  {
+    $viewData = [];
+    $viewData['title'] = 'Products Ordered by Quantity';
+    $viewData['products'] = Product::orderBy('name', 'asc')->get();
+    return view('admin.product.ordered-name-asc')->with('viewData', $viewData);
+  }
+
+  public function getProductsOrderedNameDsc(): View
+  {
+    $viewData = [];
+    $viewData['title'] = 'Products Ordered by Quantity';
+    $viewData['products'] = Product::orderBy('name', 'desc')->get();
+    return view('admin.product.ordered-name-dsc')->with('viewData', $viewData);
+  }
 
     public function save(Request $request) : RedirectResponse
     {
