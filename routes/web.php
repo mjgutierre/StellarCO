@@ -19,7 +19,11 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.index");
 
 //ADMIN-PRODUCTS
-Route::get('/admin/products', 'App\Http\Controllers\Admin\AdminProductController@index')->name("admin.product.index");
+Route::get('/admin/products/', 'App\Http\Controllers\Admin\AdminProductController@index')->name("admin.product.index");
+Route::get('/admin/products/products-ordered-ascending','App\Http\Controllers\Admin\AdminProductController@getProductsOrderedAsc')->name('admin.product.ordered-asc');
+Route::get('/admin/products/products-ordered-descending','App\Http\Controllers\Admin\AdminProductController@getProductsOrderedDsc')->name('admin.product.ordered-dsc');
+Route::get('/admin/products/products-ordered-ascending-by-name','App\Http\Controllers\Admin\AdminProductController@getProductsOrderedNameAsc')->name('admin.product.ordered-name-asc');
+Route::get('/admin/products/products-ordered-descending-by-name','App\Http\Controllers\Admin\AdminProductController@getProductsOrderedNameDsc')->name('admin.product.ordered-name-dsc');
 Route::post('/admin/products/save', 'App\Http\Controllers\Admin\AdminProductController@save')->name("admin.product.save");
 Route::get('/admin/products/create', 'App\Http\Controllers\Admin\AdminProductController@create')->name("admin.product.create");
 Route::get('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@show')->name("admin.product.show");
