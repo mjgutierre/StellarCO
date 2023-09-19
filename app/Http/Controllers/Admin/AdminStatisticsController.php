@@ -14,6 +14,7 @@ class AdminStatisticsController extends Controller {
         $viewData['rockets'] = Product::sum('quantity'); 
         $viewData['countries'] = Product::sum('price');
         $viewData['rocketsAvg'] = round(Product::avg('quantity'),2);
+        $viewData['customerquant'] = User::where('role', 'Customer')->count();
         
         return view('admin.statistics.index')->with('viewData', $viewData);
     }
