@@ -6,34 +6,34 @@
         <div class="col-md-6">
             <div class="card custom-card create">
                 <div class="card-body">
-                    <h5 class="card-title">Crea un nuevo cohete</h5>
+                    <h5 class="card-title">@lang('messages.CreateNewRocket')</h5>
                     <form method="POST" action="{{ route('admin.product.save') }}">
                         @csrf
                         <div class="mb-3">
-                            <label for="name" class="form-label">Nombre</label>
+                            <label for="name" class="form-label">@lang('messages.name')</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Ingrese el nombre" required />
                         </div>
                         <div class="mb-3">
-                            <label for="description" class="form-label">Descripción</label>
+                            <label for="description" class="form-label">@lang('messages.description')</label>
                             <input type="text" class="form-control" id="description" name="description" placeholder="Ingrese la descripción" required />
                         </div>
                         <div class="mb-3">
-                            <label for="price" class="form-label">Precio</label>
+                            <label for="price" class="form-label">@lang('messages.price')</label>
                             <input type="number" class="form-control" id="price" name="price" placeholder="Ingrese el precio" required />
                         </div>
                         <div class="mb-3">
-                            <label for="quantity" class="form-label">Cantidad</label>
+                            <label for="quantity" class="form-label">@lang('messages.quantity')</label>
                             <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Ingrese la cantidad" required />
                         </div>
                         <div class="mb-3">
-                            <label for="location" class="form-label">Ubicación</label>
+                            <label for="location" class="form-label">@lang('messages.location')</label>
                             <input type="text" class="form-control" id="location" name="location" placeholder="Ingrese la ubicación" required />
                         </div>
                         <div class="mb-3">
-                            <label for="Imagen" class="form-label">Imagen</label>
+                            <label for="Imagen" class="form-label">@lang('messages.imagen')</label>
                             <input class="form-control" type="file" name="image">
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="submit" class="btn btn-primary">@lang('messages.send')</button>
                     </form>
                 </div>
             </div>

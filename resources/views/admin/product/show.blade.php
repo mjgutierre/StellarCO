@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
     <div class="breadcrumbs">
-        <a href="{{ route('home.index') }}">@lang('messages.home')</a> /
-        <a href="{{ route('product.index') }}">@lang('messages.product')</a> /
+        <a href="{{ route('admin.index') }}">@lang('messages.home')</a> /
+        <a href="{{ route('admin.product.index') }}">@lang('messages.product')</a> /
         {{ $viewData["product"]->getName() }} 
     </div>
     <div class="row">
@@ -28,9 +28,9 @@
                     <form action="{{ route('admin.product.update', $viewData['product']->getId()) }}" method="POST">
                         @csrf
                         @method('PUT')
-                        <h2>Actualiza el producto</h2>
+                        <h2>@lang('messages.UpdateProduct')</h2>
                         <div class="mb-2">
-                            <label for="name" class="form-label">Nombre</label>
+                            <label for="name" class="form-label">@lang('messages.name')</label>
                             <input type="text" name="name" id="name" class="form-control" value="{{ $viewData['product']->getName() }}" required>
                         </div>
                         <div class="mb-2">

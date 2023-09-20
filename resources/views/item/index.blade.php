@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Carrito de compras')
+@section('title', 'ShoppingCart')
 @section('content')
 
     @if(session()->has('success'))
@@ -14,10 +14,10 @@
 
     @forelse ($items as $key => $item)
         <div class="review">
-            <p>Id del producto: {{ $item['product_id'] }} </p>
-            <p>Precio del producto: ${{ $item['price'] }}</p>
-            <p>Descripción del producto: {{ $item['description'] }}</p>
-            <p>Cantidad: {{ $item['quantity'] }}</p>
+            <p>@lang('messages.ProductId'): {{ $item['product_id'] }} </p>
+            <p>@lang('messages.ProductPrice'): ${{ $item['price'] }}</p>
+            <p>@lang('messages.ProductDescription'): {{ $item['description'] }}</p>
+            <p>@lang('messages.quantity'): {{ $item['quantity'] }}</p>
 
             <form action="{{ route('items.destroy', $item['product_id']) }}" method="POST">
                 @csrf
