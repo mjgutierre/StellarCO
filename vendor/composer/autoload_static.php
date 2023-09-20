@@ -537,6 +537,7 @@ class ComposerStaticInit28c2d28a18e212922dfa07b4c26fe393
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\AdminHomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminHomeController.php',
         'App\\Http\\Controllers\\Admin\\AdminProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminProductController.php',
+        'App\\Http\\Controllers\\Admin\\AdminStatisticsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminStatisticsController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',

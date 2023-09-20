@@ -10,6 +10,7 @@ return array(
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Admin\\AdminHomeController' => $baseDir . '/app/Http/Controllers/Admin/AdminHomeController.php',
     'App\\Http\\Controllers\\Admin\\AdminProductController' => $baseDir . '/app/Http/Controllers/Admin/AdminProductController.php',
+    'App\\Http\\Controllers\\Admin\\AdminStatisticsController' => $baseDir . '/app/Http/Controllers/Admin/AdminStatisticsController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',

@@ -270,3 +270,34 @@ header {
     display: flex;
     gap: 10px; 
 }
+
+/* analitycs  */
+.containerstatistics{
+    margin-top:100px;
+}
+/* CSS */
+.counter-box {
+    display: block;
+    background: #f6f6f6;
+    padding: 40px 20px 37px;
+    text-align: center;
+    min-height: 200px; 
+}
+
+.counter-box p {
+    margin: 5px 0 0;
+    padding: 0;
+    color: #202020;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.counter-box i {
+    font-size: 60px;
+    margin: 0 0 15px;
+    color: #d2d2d2;
+}
+.statistics-title {
+    margin-bottom: 30px; 
+}
+
