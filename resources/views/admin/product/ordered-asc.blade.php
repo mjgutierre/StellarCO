@@ -7,7 +7,7 @@
     <div class="row mt-5">
         <div class="filters breadcrumbs">
             <div class="btn btn-primary">
-                <a href="{{ route('product.index') }}">Restaurar Filtros</a>
+                <a href="{{ route('admin.product.index') }}">>@lang('messages.RestartFilters')</a>
             </div>
         </div>
         
@@ -17,10 +17,16 @@
                 <img src="{{ $product->getImage() }}" class="card-img-top" alt="{{ $product->getName() }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ $product->getName() }}</h5>
-                    <p class="card-text">Precio: ${{ $product->getPrice() }}</p>
-                    <p class="card-text">Cantidad: {{ $product->getQuantity() }}</p>
-                    <p class="card-text">Ubicación: {{ $product->getLocation() }}</p>
-                    <a href="{{ route('product.show', ['id'=> $product->getId()]) }}" class="btn btn-primary">CONOCE MÁS</a>
+                    <p class="card-text">@lang('messages.price'): ${{ $product->getPrice() }}</p>
+                    <p class="card-text">@lang('messages.quantity'): {{ $product->getQuantity() }}</p>
+                    <p class="card-text">@lang('messages.location'): {{ $product->getLocation() }}</p>
+                    <a href="{{ route('product.show', ['id'=> $product->getId()]) }}" class="btn btn-primary">@lang('messages.LearnMore')</a>
+
+                    <form action="{{ route('admin.product.destroy', $product->getId()) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                            <button type="submit" class="btn btn-danger">@lang('messages.delete')</button>
+                    </form>
                 </div>
             </div>
         </div>
