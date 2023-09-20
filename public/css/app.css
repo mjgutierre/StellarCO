@@ -19,7 +19,7 @@ header {
 }
 
 .static-image {
-    background-image: url('/images/carrusel1.jpg');
+    background-image: url('../images/carrusel1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
