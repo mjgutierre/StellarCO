@@ -21,9 +21,9 @@
                     <div class="product-details">
                         <h2 class="product-title">{{ $viewData["product"]->getName() }}</h2>
                         <p class="product-price"> @lang('messages.price'): ${{ $viewData["product"]->getPrice() }}</p>
-                        <p class="product-quantity">@lang('messages.quantity'): {{ $viewData["product"]->getQuantity() }}</p>
-                        <p class="product-location">@lang('messages.location'): {{ $viewData["product"]->getLocation() }}</p>
-                        <p class="product-description">@lang('messages.description'): {{ $viewData["product"]->getDescription() }}</p>
+                        <p class="product-quantity">@lang('messages.price'):: {{ $viewData["product"]->getQuantity() }}</p>
+                        <p class="product-location">@lang('messages.price'):: {{ $viewData["product"]->getLocation() }}</p>
+                        <p class="product-description">@lang('messages.price'):: {{ $viewData["product"]->getDescription() }}</p>
                         <button class="btn btn-primary">@lang('messages.AddToCart')</button><!-- si esta registrado -->
                     </div>
                 </div>
