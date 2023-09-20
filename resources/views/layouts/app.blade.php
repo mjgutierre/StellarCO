@@ -15,22 +15,22 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('home.index') }}">Inicio</a>
+            <a class="navbar-brand" href="{{ route('home.index') }}">@lang('messages.home')</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('product.index') }}">Productos</a>
+                        <a class="nav-link" href="{{ route('product.index') }}">@lang('messages.product')</a>
                     </li>
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                     @guest
                     <a class="nav-link active" href="{{ route('login') }}">Login</a>
-                    <a class="nav-link active" href="{{ route('register') }}">Register</a>
+                    <a class="nav-link active" href="{{ route('register') }}">@lang('messages.register')</a>
                     @else
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Carrito</a>
+                        <a class="nav-link" href="#">@lang('messages.cart')</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Estadisticas</a>
