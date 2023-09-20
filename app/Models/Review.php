@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Http\Request;
 
 class Review extends Model
 {
@@ -82,4 +83,13 @@ class Review extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+     //CLASS METHODS
+     public static function validate(Request $request): void
+     {
+         $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required'
+         ]);
+     }
 }
