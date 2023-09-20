@@ -5,9 +5,9 @@
 <header>
   <div class="static-image">
     <div class="overlay-content">
-      <h5>Descubre una experiencia de compra única en StellarCO</h5>
-      <p>Explora ya nuestros productos.</p>
-      <a href="{{ route('product.index') }}" class="btn btn-primary">Ver productos</a>
+      <h5>@lang('messages.DiscoverAUniqueShoppingExperienceAtStellarCO')</h5>
+      <p>@lang('messages.ExploreOurProductsNow')</p>
+      <a href="{{ route('product.index') }}" class="btn btn-primary">@lang('messages.SeeProducts')</a>
     </div>
   </div>
   @endsection

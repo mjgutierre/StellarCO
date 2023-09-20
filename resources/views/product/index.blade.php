@@ -6,16 +6,16 @@
 
     <div class="filters breadcrumbs">
         <div class="btn btn-primary">
-            <a href="{{ route('product.ordered-asc') }}">Cantidad de menor a mayor</a>
+            <a href="{{ route('product.ordered-asc') }}">@lang('messages.QuantityFromSmallestToLargest')</a>
         </div>
         <div class="btn btn-primary">
-            <a  href="{{ route('product.ordered-dsc') }}">Cantidad de mayor a menor</a>
+            <a  href="{{ route('product.ordered-dsc') }}">@lang('messages.QuantityFromLargestToSmallest')</a>
         </div>
         <div class="btn btn-primary">
-            <a href="{{ route('product.ordered-name-asc') }}">Nombre Aa-Zz</a>
+            <a href="{{ route('product.ordered-name-asc') }}">@lang('messages.NameAa-Zz')</a>
         </div>
         <div class="btn btn-primary">
-            <a href="{{ route('product.ordered-name-dsc') }}">Nombre Zz-Aa</a>
+            <a href="{{ route('product.ordered-name-dsc') }}">@lang('messages.NameZz-Aa')</a>
         </div>
     </div>
 
@@ -26,10 +26,10 @@
                 <img src="{{ $product->getImage() }}" class="card-img-top" alt="{{ $product->getName() }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ $product->getName() }}</h5>
-                    <p class="card-text">Precio: ${{ $product->getPrice() }}</p>
-                    <p class="card-text">Cantidad: {{ $product->getQuantity() }}</p>
-                    <p class="card-text">Ubicación: {{ $product->getLocation() }}</p>
-                    <a href="{{ route('product.show', ['id'=> $product->getId()]) }}" class="btn btn-primary">CONOCE MÁS</a>
+                    <p class="card-text">@lang('messages.price'): ${{ $product->getPrice() }}</p>
+                    <p class="card-text">@lang('messages.quantity'): {{ $product->getQuantity() }}</p>
+                    <p class="card-text">@lang('messages.location'): {{ $product->getLocation() }}</p>
+                    <a href="{{ route('product.show', ['id'=> $product->getId()]) }}" class="btn btn-primary">@lang('messages.LearnMore')</a>
                 </div>
             </div>
         </div>
