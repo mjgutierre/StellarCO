@@ -36,4 +36,19 @@
                     </div>
             @endforeach
         </div>
-        @endsection
+        <div class="container">
+          <h3>Deja tu comentario</h3>
+          <form method="POST" action="{{ route('review.save', ['id'=> $viewData["product"]->getId()]) }}">
+            @csrf
+            <div class="mb-3">
+                <label for="name" class="form-label">Titulo</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Ingrese el titulo" required />
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Descripción</label>
+              <input type="text" class="form-control" id="description" name="description" placeholder="Ingrese la descripción" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+        </div>
+@endsection

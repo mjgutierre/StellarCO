@@ -23,6 +23,9 @@ Route::get('/products-ordered-ascending-by-name', 'App\Http\Controllers\ProductC
 Route::get('/products-ordered-descending-by-name', 'App\Http\Controllers\ProductController@getProductsOrderedNameDsc')->name('product.ordered-name-dsc');
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->name('product.show');
 
+//REVIEWS
+Route::post('/products/{id}/review', 'App\Http\Controllers\ReviewController@save')->name("review.save");
+
 Route::middleware('admin')->group(function () {
     //ADMIN
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name('admin.index');
