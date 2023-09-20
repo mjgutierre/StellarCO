@@ -8,6 +8,9 @@
             <h5>Bienvenido Administrador</h5>
             <p>Aqui puedes gestionar tus productos.</p>
             <a href="{{ route('admin.product.index') }}" class="btn btn-primary">Empieza aqui</a>
+
+            <p>Aqui puedes ver tus estadisticas.</p>
+            <a href="{{ route('admin.statistics.index') }}" class="btn btn-primary">Click aqui</a>
         </div>
     </div>
 @endsection
