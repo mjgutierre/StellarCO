@@ -2,12 +2,10 @@
 
 namespace App\Models;
 
-
-use App\Models\Review;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Http\Request;
 
 class Product extends Model
@@ -27,14 +25,13 @@ class Product extends Model
      * this->attributes['updated_at'] - string - contains the date of update of the product
      * $this->reviews - Review[] - contains teh associated reviews
      */
-
     protected $fillable = [
         'name',
         'description',
         'price',
         'quantity',
         'image',
-        'location'
+        'location',
     ];
 
     //GETERS
@@ -51,7 +48,7 @@ class Product extends Model
     public function getDescription(): string
     {
         return $this->attributes['description'];
-    } 
+    }
 
     public function getPrice(): int
     {
@@ -94,27 +91,27 @@ class Product extends Model
         $this->attributes['name'] = $name;
     }
 
-    function setDescription(string $description): void
+    public function setDescription(string $description): void
     {
         $this->attributes['description'] = $description;
     }
 
-    function setPrice(int $price): void
+    public function setPrice(int $price): void
     {
         $this->attributes['price'] = $price;
     }
 
-    function setQuantity(int $quantity): void
+    public function setQuantity(int $quantity): void
     {
         $this->attributes['quantity'] = $quantity;
     }
 
-    public function setImage(string $image) : void 
+    public function setImage(string $image): void
     {
-      $this->attributes['image'] = $image; 
+        $this->attributes['image'] = $image;
     }
 
-    function setLocation(string $location): void
+    public function setLocation(string $location): void
     {
         $this->attributes['location'] = $location;
     }
@@ -136,10 +133,10 @@ class Product extends Model
         $request->validate([
             'name' => 'required|max:255',
             'description' => 'required',
-            'price'=> 'required|numeric|gt:0',
+            'price' => 'required|numeric|gt:0',
             'quantity' => 'required|numeric|gt:0',
             'location' => 'required|max:255',
-            'image' => 'image'
+            'image' => 'image',
         ]);
     }
 }

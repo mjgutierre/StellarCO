@@ -12,18 +12,18 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
-      * USER ATTRIBUTES
-      * $this->attributes['id'] - int - contains the user primary key (id) 
-      * $this->attributes['name'] - string - contains the user name
-      * $this->attributes['email'] - string - contains the user email
-      * $this->attributes['email_verified_at'] - timestamp - contains the user email verification date 
-      * $this->attributes['password'] - string - contains the user password
-      * $this->attributes['remember_token'] - string - contains the user password
-      * $this->attributes['role'] - string - contains the user role (customer or admin)
-      * $this->attributes['balance'] - int - contains the user balance
-      * $this->attributes['created_at'] - timestamp - contains the user creation date
-      * $this->attributes['updated_at'] - timestamp - contains the user update date
-    */
+     * USER ATTRIBUTES
+     * $this->attributes['id'] - int - contains the user primary key (id)
+     * $this->attributes['name'] - string - contains the user name
+     * $this->attributes['email'] - string - contains the user email
+     * $this->attributes['email_verified_at'] - timestamp - contains the user email verification date
+     * $this->attributes['password'] - string - contains the user password
+     * $this->attributes['remember_token'] - string - contains the user password
+     * $this->attributes['role'] - string - contains the user role (customer or admin)
+     * $this->attributes['balance'] - int - contains the user balance
+     * $this->attributes['created_at'] - timestamp - contains the user creation date
+     * $this->attributes['updated_at'] - timestamp - contains the user update date
+     */
 
     /**
      * The attributes that are mass assignable.
@@ -34,7 +34,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'balance'
+        'balance',
     ];
 
     /**

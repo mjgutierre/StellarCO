@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -19,12 +18,11 @@ class Review extends Model
      * $this->attributes['product_id'] - string - contains the id of the product of this review
      * this->attributes['created_at'] - string - contains the date of creation of the product
      * this->attributes['updated_at'] - string - contains the date of update of the product
-    */
-
+     */
     protected $fillable = [
         'title',
         'description',
-        'product_id'
+        'product_id',
     ];
 
     //GETTERS
