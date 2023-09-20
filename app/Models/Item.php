@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class OrderItem extends Model
+class Item extends Model
 {
     use HasFactory;
 
@@ -69,5 +70,11 @@ class OrderItem extends Model
     public function setProductId(int $product_id): void
     {
         $this->attributes['product_id'] = $product_id;
+    }
+
+    //RELATIONS
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class);
     }
 }
