@@ -28,7 +28,7 @@
                     <p class="card-text">@lang('messages.price'): ${{ $product->getPrice() }}</p>
                     <p class="card-text">@lang('messages.quantity'): {{ $product->getQuantity() }}</p>
                     <p class="card-text">@lang('messages.location'): {{ $product->getLocation() }}</p>
-                    <a href="{{ route('product.show', ['id'=> $product->getId()]) }}" class="btn btn-primary">@lang('messages.LearnMore')</a>
+                    <a href="{{ route('admin.product.show', ['id'=> $product->getId()]) }}" class="btn btn-primary">@lang('messages.LearnMore')</a>
                     
                     <form action="{{ route('admin.product.destroy', $product->getId()) }}" method="POST">
                         @csrf
