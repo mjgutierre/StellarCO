@@ -29,6 +29,12 @@
                     <p class="card-text">Cantidad: {{ $product->getQuantity() }}</p>
                     <p class="card-text">Ubicación: {{ $product->getLocation() }}</p>
                     <a href="{{ route('admin.product.show', ['id'=> $product->getId()]) }}" class="btn btn-primary">VER PRODUCTO</a>
+                    
+                    <form action="{{ route('admin.product.destroy', $product->getId()) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
                 </div>
             </div>
         </div>
