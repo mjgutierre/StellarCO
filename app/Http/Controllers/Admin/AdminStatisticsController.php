@@ -15,7 +15,7 @@ class AdminStatisticsController extends Controller {
         $viewData['rockets'] = Product::sum('quantity'); 
         $viewData['countries'] = Product::sum('price');
         $viewData['rocketsAvg'] = round(Product::avg('quantity'),2);
-        $viewData['usersCount'] = User::where('role', 'Customer')->count();
+        $viewData['usersCount'] = User::where('role', 'customer')->count();
 
         return view('admin.statistics.index')->with('viewData', $viewData);
     }
@@ -24,7 +24,7 @@ class AdminStatisticsController extends Controller {
     {
         $viewData = [];
         $viewData['title'] = 'Customer Users List';
-        $viewData['users'] = User::all();
+        $viewData['users'] = User::where('role', 'customer')->get();
 
         return view('admin.statistics.user')->with('viewData', $viewData);
     }
