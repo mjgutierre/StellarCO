@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="breadcrumbs">
-        <a href="{{ route('admin.index') }}">Inicio</a> /
-        <a href="{{ route('admin.product.index') }}">Productos</a> /
-        {{ $viewData["product"]->getName() }}
+        <a href="{{ route('home.index') }}">@lang('messages.home')</a> /
+        <a href="{{ route('product.index') }}">@lang('messages.product')</a> /
+        {{ $viewData["product"]->getName() }} 
     </div>
     <div class="row">
         <div class="container">
@@ -34,28 +34,28 @@
                             <input type="text" name="name" id="name" class="form-control" value="{{ $viewData['product']->getName() }}" required>
                         </div>
                         <div class="mb-2">
-                            <label for="description" class="form-label">Descripción</label>
+                            <label for="description" class="form-label">@lang('messages.description'):</label>
                             <input type="text" name="description" id="description" class="form-control" value="{{ $viewData['product']->getDescription() }}" required>
                         </div>
                         <div class="mb-2">
-                            <label for="price" class="form-label">Precio</label>
+                            <label for="price" class="form-label">@lang('messages.price'):</label>
                             <input type="number" name="price" id="price" class="form-control" value="{{ $viewData['product']->getPrice() }}" required>
                         </div>
                         <div class="mb-2">
-                            <label for="quantity" class="form-label">Cantidad</label>
+                            <label for="quantity" class="form-label">@lang('messages.quantity'):</label>
                             <input type="number" name="quantity" id="quantity" class="form-control" value="{{ $viewData['product']->getQuantity() }}" required>
                         </div>
                         <div class="mb-2">
-                            <label for="location" class="form-label">Ubicación</label>
+                            <label for="location" class="form-label">@lang('messages.location'):</label>
                             <input type="text" name="location" id="location" class="form-control" value="{{ $viewData['product']->getLocation() }}" required>
                         </div>
                         <div class="button-group">
-                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                            <button type="submit" class="btn btn-primary">@lang('messages.update')</button>
                     </form>
                     <form action="{{ route('admin.product.destroy', $viewData['product']->getId()) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                            <button type="submit" class="btn btn-danger">@lang('messages.delete')</button>
                         </div>
                     </form>
                 </div>

@@ -23,5 +23,7 @@ return[
     'title' =>'Titulo',
     'AddTitle' =>  'Ingrese el titulo',
     'AddDescription' => 'Ingrese la descripción',
-    'send' => 'Enviar'
+    'send' => 'Enviar',
+    'delete' => 'Eliminar',
+    'update' => 'Actualizar'
 ];
