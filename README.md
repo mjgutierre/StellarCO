@@ -8,7 +8,7 @@ En este repositorio se almacenarán las entregas y el desarrollo de la aplicaci�
 
 ### Especificaciones técnicas
 
-- El proyecto corre en la IP 34.135.233.186/StellarCO/public
+- El proyecto corre en la IP (34.135.233.186)[34.135.233.186/StellarCO/public]
 
 -  Para hacer las migraciones del proyecto, en una terminal escribir el siguiente comando
 
