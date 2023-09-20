@@ -310,3 +310,77 @@ header {
 .statistics-p {
     margin-top: 20px;
 }
+
+/* orden */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background:#eee;
+}
+
+.size span {
+  font-size: 11px;
+}
+
+.color span {
+  font-size: 11px;
+}
+
+.product-deta {
+  margin-right: 70px;
+}
+
+.gift-card:focus {
+  box-shadow: none;
+}
+
+.pay-button {
+  color: #FFC62D;
+}
+
+.pay-button:hover {
+  color: #FFD460;
+}
+
+.pay-button:focus {
+  color: #fff;
+  box-shadow: none;
+}
+
+.text-grey {
+  color: #204279;
+}
+
+.qty i {
+  font-size: 11px;
+}
+
+/* ORDER */
+ /* {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}body */
+
+.modal-body {
+    background-color: #fff;
+    border-color: #fff;
+
+}
+
+
+.close {
+    color: #000;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+hr.new1 {
+    border-top: 2px dashed #fff;
+    margin: 0.4rem 0;
+}

@@ -5,7 +5,7 @@
 <header>
   <div class="static-image">
     <div class="overlay-content">
-      <h5>HOLAAA @lang('messages.DiscoverAUniqueShoppingExperienceAtStellarCO')</h5>
+      <h5>@lang('messages.DiscoverAUniqueShoppingExperienceAtStellarCO')</h5>
       <p>@lang('messages.ExploreOurProductsNow')</p>
       <a href="{{ route('product.index') }}" class="btn btn-primary">@lang('messages.SeeProducts')</a>
     </div>

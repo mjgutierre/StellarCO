@@ -13,7 +13,7 @@
                 <div class="col-md-6">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="{{ $viewData['product']->getImage() }}" alt="{{ $viewData['product']->getName() }}">
+                            <img src="{{ $viewData['product']->getImage() }}" alt="NombreCohete">
                         </div>
                     </div>
                 </div>
