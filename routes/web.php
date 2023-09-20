@@ -26,6 +26,12 @@ Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->nam
 //REVIEWS
 Route::post('/products/{id}/review', 'App\Http\Controllers\ReviewController@save')->name("review.save");
 
+//ORDER ITEMS
+Route::get('/order-items', 'App\Http\Controllers\OrderItemsController@index')->name('product.cart');
+
+//ORDERS
+Route::get('/order', 'App\Http\Controllers\OrderController@index')->name('product.order');
+
 Route::middleware('admin')->group(function () {
     //ADMIN
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name('admin.index');
