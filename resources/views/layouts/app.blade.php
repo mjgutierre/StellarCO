@@ -30,7 +30,7 @@
                     <a class="nav-link active" href="{{ route('register') }}">@lang('messages.register')</a>
                     @else
                     <li class="nav-item">
-                        <a class="nav-link" href="#">@lang('messages.cart')</a>
+                        <a class="nav-link" href="{{ route('items.index') }}">@lang('messages.cart')</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Estadisticas</a>

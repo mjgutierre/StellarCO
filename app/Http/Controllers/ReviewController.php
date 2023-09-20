@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Review;
-use Illuminate\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Redirector;
 use Illuminate\Http\RedirectResponse;
 
 class ReviewController extends Controller

@@ -26,11 +26,11 @@ Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->nam
 //REVIEWS
 Route::post('/products/{id}/review', 'App\Http\Controllers\ReviewController@save')->name("review.save");
 
-//ORDER ITEMS
-Route::get('/order-items', 'App\Http\Controllers\OrderItemsController@index')->name('product.cart');
+//ITEMS
+Route::get('/items', 'App\Http\Controllers\ItemController@index')->name('items.index');
+Route::post('/items','App\Http\Controllers\ItemController@store')->name('items.store');
+Route::delete('/items/{id}', 'App\Http\Controllers\ItemController@destroy')->name('items.destroy');
 
-//ORDERS
-Route::get('/order', 'App\Http\Controllers\OrderController@index')->name('product.order');
 
 Route::middleware('admin')->group(function () {
     //ADMIN

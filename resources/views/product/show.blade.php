@@ -21,10 +21,16 @@
                     <div class="product-details">
                         <h2 class="product-title">{{ $viewData["product"]->getName() }}</h2>
                         <p class="product-price"> @lang('messages.price'): ${{ $viewData["product"]->getPrice() }}</p>
-                        <p class="product-quantity">@lang('messages.price'):: {{ $viewData["product"]->getQuantity() }}</p>
-                        <p class="product-location">@lang('messages.price'):: {{ $viewData["product"]->getLocation() }}</p>
-                        <p class="product-description">@lang('messages.price'):: {{ $viewData["product"]->getDescription() }}</p>
-                        <button class="btn btn-primary">@lang('messages.AddToCart')</button><!-- si esta registrado -->
+                        <p class="product-quantity">@lang('messages.quantity'): {{ $viewData["product"]->getQuantity() }}</p>
+                        <p class="product-location">@lang('messages.location'): {{ $viewData["product"]->getLocation() }}</p>
+                        <p class="product-description">@lang('messages.description'): {{ $viewData["product"]->getDescription() }}</p>
+                        <form action="{{ route('items.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="price" value="{{ $viewData['product']->getPrice() }}">
+                            <input type="hidden" name="product_id" value="{{ $viewData['product']->getId() }}">
+                            <input type="hidden" name="description" value="{{ $viewData['product']->getDescription() }}">
+                            <button type="submit" class="btn btn-primary">@lang('messages.AddToCart')</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -36,6 +42,7 @@
                     </div>
             @endforeach
         </div>
+
         <div class="container">
           <h3>@lang('messages.LeaveYourReview')</h3>
           <form method="POST" action="{{ route('review.save', ['id'=> $viewData["product"]->getId()]) }}">
