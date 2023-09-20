@@ -40,8 +40,10 @@ header {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Para centrar horizontalmente */
-    justify-content: center; /* Para centrar verticalmente */
+    align-items: center;
+    /* Para centrar horizontalmente */
+    justify-content: center;
+    /* Para centrar verticalmente */
 }
 
 
@@ -99,19 +101,20 @@ header {
     color: white;
 }
 
-.analytics{
+.analytics {
     padding-top: 20px;
     text-align: center;
     font-size: 30px;
 }
+
 /* products index-------------------------------------------------------------------------------------------------------*/
 .card {
-    width: 300px; 
+    width: 300px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    margin-bottom: 20px; 
-    position: relative; 
+    margin-bottom: 20px;
+    position: relative;
 }
 
 .card:hover {
@@ -121,7 +124,7 @@ header {
 .card-img-top {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    max-width: 100%; 
+    max-width: 100%;
 }
 
 .card-body {
@@ -140,7 +143,8 @@ header {
 }
 
 .btn {
-    text-align: center; /* Alineación horizontal al centro */
+    text-align: center;
+    /* Alineación horizontal al centro */
     margin-top: 5px;
     border: none;
 }
@@ -158,18 +162,19 @@ header {
 
 /* login register */
 .custom-card {
-    width: 460px; 
+    width: 460px;
 }
+
 .my-center {
     margin-top: 100px;
 }
 
-.review{
-    width: auto; 
+.review {
+    width: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
     position: relative;
     margin-top: 10px;
     padding: 10px;
@@ -243,7 +248,7 @@ header {
 
 /* create */
 .custom-card {
-    width: 460px; 
+    width: 460px;
 }
 
 .create {
@@ -251,7 +256,7 @@ header {
 }
 
 .btn {
-    text-align: center; 
+    text-align: center;
     margin-top: 5px;
     border: none;
 }
@@ -268,20 +273,21 @@ header {
 
 .button-group {
     display: flex;
-    gap: 10px; 
+    gap: 10px;
 }
 
 /* analitycs  */
-.containerstatistics{
-    margin-top:100px;
+.containerstatistics {
+    margin-top: 100px;
 }
+
 /* CSS */
 .counter-box {
     display: block;
     background: #f6f6f6;
     padding: 40px 20px 37px;
     text-align: center;
-    min-height: 200px; 
+    min-height: 200px;
 }
 
 .counter-box p {
@@ -298,9 +304,9 @@ header {
     color: #d2d2d2;
 }
 .statistics-title {
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
 
-.statistics-p{
+.statistics-p {
     margin-top: 20px;
 }

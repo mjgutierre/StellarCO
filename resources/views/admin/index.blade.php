@@ -1,5 +1,5 @@
 <!-- Autor del codigo Maria Jose Gutierrez Estrada -->
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('title', 'Admin Page - StellarCO')
 @section('content')
 <header>
