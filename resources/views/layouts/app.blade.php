@@ -32,9 +32,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('items.index') }}">@lang('messages.cart')</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Estadisticas</a>
-                    </li> -->
                     <form id="logout" action="{{ route('logout') }}" method="POST">
                         <a role="button" class="nav-link active" onclick="document.getElementById('logout').submit();">Logout</a>
                         @csrf

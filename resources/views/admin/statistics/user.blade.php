@@ -1,6 +1,6 @@
 <!-- Created By Sebastian Arias -->
 
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('title', $viewData['title'])
 @section('content')
 <div class="container-fluid d-flex justify-content-center indexproducts">

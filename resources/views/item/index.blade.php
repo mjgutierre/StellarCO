@@ -13,7 +13,7 @@
     @endif
 
     @forelse ($items as $key => $item)
-        <div class="review">
+        <div class="cart">
             <p>@lang('messages.ProductId'): {{ $item['product_id'] }} </p>
             <p>@lang('messages.ProductPrice'): ${{ $item['price'] }}</p>
             <p>@lang('messages.ProductDescription'): {{ $item['description'] }}</p>
@@ -26,6 +26,6 @@
             </form>
         </div>
     @empty
-        <p>No hay elementos en el carrito.</p>
+        <p class="cart-content">No hay elementos en el carrito.</p>
     @endforelse
 @endsection

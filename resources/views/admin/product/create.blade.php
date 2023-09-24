@@ -11,26 +11,26 @@
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">@lang('messages.name')</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Ingrese el nombre" required />
+                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" placeholder="Ingrese el nombre" required />
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">@lang('messages.description')</label>
-                            <input type="text" class="form-control" id="description" name="description" placeholder="Ingrese la descripción" required />
+                            <input type="text" class="form-control" id="description" name="description"  value="{{ old('description') }}" placeholder="Ingrese la descripción" required />
                         </div>
                         <div class="mb-3">
                             <label for="price" class="form-label">@lang('messages.price')</label>
-                            <input type="number" class="form-control" id="price" name="price" placeholder="Ingrese el precio" required />
+                            <input type="number" class="form-control" id="price" name="price"  value="{{ old('price') }}" placeholder="Ingrese el precio" required />
                         </div>
                         <div class="mb-3">
                             <label for="quantity" class="form-label">@lang('messages.quantity')</label>
-                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Ingrese la cantidad" required />
+                            <input type="number" class="form-control" id="quantity" name="quantity"  value="{{ old('quantity') }}" placeholder="Ingrese la cantidad" required />
                         </div>
                         <div class="mb-3">
                             <label for="location" class="form-label">@lang('messages.location')</label>
-                            <input type="text" class="form-control" id="location" name="location" placeholder="Ingrese la ubicación" required />
+                            <input type="text" class="form-control" id="location" name="location"  value="{{ old('location') }}" placeholder="Ingrese la ubicación" required />
                         </div>
                         <div class="mb-3">
-                            <label for="Imagen" class="form-label">@lang('messages.imagen')</label>
+                            <label for="image" class="form-label">@lang('messages.imagen')</label>
                             <input class="form-control" type="file" name="image">
                         </div>
                         <button type="submit" class="btn btn-primary">@lang('messages.send')</button>
