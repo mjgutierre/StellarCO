@@ -17,10 +17,8 @@ use Illuminate\Support\Facades\Route;
 //PRODUCTS
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index');
 Route::get('/products', 'App\Http\Controllers\ProductController@index')->name('product.index');
-Route::get('/products-ordered-ascending', 'App\Http\Controllers\ProductController@getProductsOrderedAsc')->name('product.ordered-asc');
-Route::get('/products-ordered-descending', 'App\Http\Controllers\ProductController@getProductsOrderedDsc')->name('product.ordered-dsc');
-Route::get('/products-ordered-ascending-by-name', 'App\Http\Controllers\ProductController@getProductsOrderedNameAsc')->name('product.ordered-name-asc');
-Route::get('/products-ordered-descending-by-name', 'App\Http\Controllers\ProductController@getProductsOrderedNameDsc')->name('product.ordered-name-dsc');
+Route::get('/products/ordered/{order}', 'App\Http\Controllers\ProductController@index')->name('product.ordered');
+
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->name('product.show');
 
 //REVIEWS

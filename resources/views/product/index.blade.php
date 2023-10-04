@@ -6,16 +6,19 @@
 
     <div class="filters breadcrumbs">
         <div class="btn btn-primary">
-            <a href="{{ route('product.ordered-asc') }}">@lang('messages.QuantityFromSmallestToLargest')</a>
+            <a href="{{ route('product.ordered', ['order' => 'quantasc']) }}">@lang('messages.QuantityFromSmallestToLargest')</a>
         </div>
         <div class="btn btn-primary">
-            <a  href="{{ route('product.ordered-dsc') }}">@lang('messages.QuantityFromLargestToSmallest')</a>
+            <a  href="{{ route('product.ordered', ['order' => 'quantdesc']) }}">@lang('messages.QuantityFromLargestToSmallest')</a>
         </div>
         <div class="btn btn-primary">
-            <a href="{{ route('product.ordered-name-asc') }}">@lang('messages.NameAa-Zz')</a>
+            <a href="{{ route('product.ordered', ['order' => 'nameasc']) }}">@lang('messages.NameAa-Zz')</a>
         </div>
         <div class="btn btn-primary">
-            <a href="{{ route('product.ordered-name-dsc') }}">@lang('messages.NameZz-Aa')</a>
+            <a href="{{ route('product.ordered', ['order' => 'namedesc']) }}">@lang('messages.NameZz-Aa')</a>
+        </div>
+        <div>
+            <a href="{{ route('product.index') }}" class="btn btn-primary">@lang('messages.AllProducts')</a>
         </div>
     </div>
 
