@@ -3,6 +3,7 @@
 return[
     'home' => 'Inicio',
     'product' => 'Productos',
+    'AllProducts' => 'Todos los productos',
     'cart' => 'Carrito',
     'register'=>'Registrarse',
     'WelcomeAdmin'=> 'Bienvenido Administrador',

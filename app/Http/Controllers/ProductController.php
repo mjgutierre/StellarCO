@@ -7,14 +7,40 @@ use Illuminate\View\View;
 
 class ProductController extends Controller
 {
-    public function index(): View
+    public function index(string $order = null): View
     {
         $viewData = [];
         $viewData['title'] = 'Products';
-        $viewData['products'] = Product::all();
-
+    
+        switch ($order) {
+            case 'quantasc':
+                $viewData['products'] = Product::orderBy('quantity', 'asc')->get();
+                $orderingDescription = 'Quantity Ascending';
+                break;
+            case 'quantdesc':
+                $viewData['products'] = Product::orderBy('quantity', 'desc')->get();
+                $orderingDescription = 'Quantity Descending';
+                break;
+            case 'nameasc':
+                $viewData['products'] = Product::orderBy('name', 'asc')->get();
+                $orderingDescription = 'Name Ascending';
+                break;
+            case 'namedesc':
+                $viewData['products'] = Product::orderBy('name', 'desc')->get();
+                $orderingDescription = 'Name Descending';
+                break;
+            default:
+                $viewData['products'] = Product::all();
+                $orderingDescription = '';
+        }
+    
+        if ($orderingDescription) {
+            $viewData['title'] .= ' - Ordered by ' . $orderingDescription;
+        }
+    
         return view('product.index')->with('viewData', $viewData);
     }
+
 
     public function show(int $id): View
     {
@@ -25,41 +51,5 @@ class ProductController extends Controller
         ];
 
         return view('product.show')->with('viewData', $viewData);
-    }
-
-    public function getProductsOrderedAsc(): View
-    {
-        $viewData = [];
-        $viewData['title'] = 'Products Ordered by Quantity';
-        $viewData['products'] = Product::orderBy('quantity', 'asc')->get();
-
-        return view('product.ordered-asc')->with('viewData', $viewData);
-    }
-
-    public function getProductsOrderedDsc(): View
-    {
-        $viewData = [];
-        $viewData['title'] = 'Products Ordered by Quantity';
-        $viewData['products'] = Product::orderBy('quantity', 'desc')->get();
-
-        return view('product.ordered-dsc')->with('viewData', $viewData);
-    }
-
-    public function getProductsOrderedNameAsc(): View
-    {
-        $viewData = [];
-        $viewData['title'] = 'Products Ordered by Quantity';
-        $viewData['products'] = Product::orderBy('name', 'asc')->get();
-
-        return view('product.ordered-name-asc')->with('viewData', $viewData);
-    }
-
-    public function getProductsOrderedNameDsc(): View
-    {
-        $viewData = [];
-        $viewData['title'] = 'Products Ordered by Quantity';
-        $viewData['products'] = Product::orderBy('name', 'desc')->get();
-
-        return view('product.ordered-name-dsc')->with('viewData', $viewData);
     }
 }
