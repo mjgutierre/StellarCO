@@ -3,10 +3,6 @@
 @section('title', $viewData['title'])
 @section('content')
 <div class="containerstatistics">
-    <div class="breadcrumbs">
-        <a href="{{ route('admin.index') }}">@lang('messages.home')</a> /
-        @lang('messages.statistics')
-    </div>
     <h3 class="statistics-title">@lang('messages.ThoseAreYourBussinessStatistics')</h3>
     <div class="row">
         <div class="four col-md-3">
@@ -35,14 +31,36 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="filters breadcrumbs analytics">
-                <div class="btn btn-primary">
-                    <a href="{{ route('admin.statistics.users') }}">@lang('messages.ListUsers')</a>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="section-title">
+                <h3>Productos</h3>
+            </div>
+            <div class="product-buttons">
+                <a href="{{ route('admin.product.create') }}" class="btn btn-primary">Crear</a>
+                <a href="{{ route('admin.product.index') }}" class="btn btn-secondary">Listar</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="user-container">
+                <h3>Usuarios</h3>
+                <p class="user-item">nombre/Email</p>
+                <p class="user-item">nombre/Email</p>
+                <p class="user-item">nombre/Email</p>
+                <p class="user-item">nombre/Email</p>
+                <p class="user-item">nombre/Email</p>
+                <div>
+                    <div class="filters breadcrumbs analytics">
+                        <div class="btn btn-primary">
+                            <a href="{{ route('admin.statistics.users') }}">@lang('messages.ListUsers')</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+</div>
+
+
 @endsection

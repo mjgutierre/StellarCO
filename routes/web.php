@@ -34,8 +34,7 @@ Route::delete('/items/{id}', 'App\Http\Controllers\ItemController@destroy')->nam
 
 Route::middleware('admin')->group(function () {
     //ADMIN
-    Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name('admin.index');
-
+    Route::get('/admin', 'App\Http\Controllers\Admin\AdminStatisticsController@index')->name('admin.statistics.index');
     //ADMIN-PRODUCTS
     Route::get('/admin/products/', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.index');
     Route::get('/admin/products/products-ordered-ascending', 'App\Http\Controllers\Admin\AdminProductController@getProductsOrderedAsc')->name('admin.product.ordered-asc');
@@ -49,7 +48,6 @@ Route::middleware('admin')->group(function () {
     Route::put('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@update')->name('admin.product.update');
 
     //ADMIN-STATISTICS
-    Route::get('/admin/statistics', 'App\Http\Controllers\Admin\AdminStatisticsController@index')->name('admin.statistics.index');
     Route::get('/admin/statistics/user-list', 'App\Http\Controllers\Admin\AdminStatisticsController@users')->name('admin.statistics.users');
 });
 

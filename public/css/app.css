@@ -278,7 +278,6 @@ header {
 
 /* analitycs  */
 .containerstatistics {
-    margin-top: 100px;
 }
 
 /* CSS */
@@ -303,61 +302,62 @@ header {
     margin: 0 0 15px;
     color: #d2d2d2;
 }
+
 .statistics-title {
     margin-bottom: 30px;
 }
 
 .statistics-p {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 /* orden */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
 
 body {
-  font-family: 'Manrope', sans-serif;
-  background:#eee;
+    font-family: 'Manrope', sans-serif;
+    background: #eee;
 }
 
 .size span {
-  font-size: 11px;
+    font-size: 11px;
 }
 
 .color span {
-  font-size: 11px;
+    font-size: 11px;
 }
 
 .product-deta {
-  margin-right: 70px;
+    margin-right: 70px;
 }
 
 .gift-card:focus {
-  box-shadow: none;
+    box-shadow: none;
 }
 
 .pay-button {
-  color: #FFC62D;
+    color: #FFC62D;
 }
 
 .pay-button:hover {
-  color: #FFD460;
+    color: #FFD460;
 }
 
 .pay-button:focus {
-  color: #fff;
-  box-shadow: none;
+    color: #fff;
+    box-shadow: none;
 }
 
 .text-grey {
-  color: #204279;
+    color: #204279;
 }
 
 .qty i {
-  font-size: 11px;
+    font-size: 11px;
 }
 
 /* ORDER */
- /* {
+/* {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -384,10 +384,77 @@ hr.new1 {
     margin: 0.4rem 0;
 }
 
-.cart-content{
+.cart-content {
     padding-top: 30px;
 }
 
-.cart{
+.cart {
     padding-top: 30px;
 }
+
+/* admin */
+#sidebar {
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding-top: 20px;
+    transition: 0.3s;
+    background-color: #143253 !important; 
+}
+
+#sidebar.active {
+    margin-left: 0;
+}
+
+#main-content {
+    transition: margin-left 0.3s;
+    margin-left: 250px;
+}
+
+
+#sidebar .nav-link {
+    padding: 10px 15px;
+    color: #ffffff; 
+    transition: 0.3s; 
+}
+
+#sidebar .nav-link:hover {
+    background-color: #4e6680; 
+    color: #ffffff; 
+}
+
+.product-buttons {
+    /* Este estilo se aplicará al contenedor de los botones */
+}
+
+.product-buttons a {
+    margin-right: 150px; 
+    font-size: 18px;  
+    padding: 10px 20px;
+}
+
+.user-container {
+    padding: 15px; /* Relleno interno */
+    background-color: #143253; 
+    border-radius: 20px;
+    color: #ffffff; 
+
+}
+
+.user-item {
+    margin-bottom: 10px;
+}
+
+.user-item p {
+    margin: 0;
+    font-weight: bold;
+    color: #ffffff; 
+}
+.user-container .user-item:nth-child(n+4) {
+    display: none;
+}
+
+

@@ -1,4 +1,4 @@
-<!-- Autor del codigo Maria Jose Gutierrez Estrada -->
+Autor del codigo Maria Jose Gutierrez Estrada
 @extends('layouts.admin')
 @section('title', 'Admin Page - StellarCO')
 @section('content')
