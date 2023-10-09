@@ -83,7 +83,7 @@ class User extends Authenticatable
         return $this->attributes['password'];
     }
 
-    public function getRememberToken(): string
+    public function getRememberToken(): null
     {
         return $this->attributes['remember_token'];
     }
@@ -107,7 +107,6 @@ class User extends Authenticatable
     {
         return $this->attributes['updated_at'];
     }
-
     //SETTERS
     public function setName(string $name): void
     {
