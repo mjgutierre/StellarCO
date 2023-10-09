@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-
     public function index()
     {
-        $items = session()->get('cart',[]);  
-        return view('item.index', ['items' => $items]);  
+        $items = session()->get('cart', []);
+
+        return view('item.index', ['items' => $items]);
     }
 
     public function store(Request $request)
@@ -18,14 +18,14 @@ class ItemController extends Controller
         $request->validate([
             'price' => 'required',
             'product_id' => 'required',
-            'description' => 'required'
+            'description' => 'required',
         ]);
 
         $cart = session()->get('cart', []);
-        $key = 'product_' . $request->product_id;
+        $key = 'product_'.$request->product_id;
 
         if (isset($cart[$key])) {
-            $cart[$key]['quantity']++;  
+            $cart[$key]['quantity']++;
         } else {
             $cart[$key] = [
                 'price' => $request->price,
@@ -42,15 +42,15 @@ class ItemController extends Controller
     public function destroy($id)
     {
         $cart = session()->get('cart', []);
-        $key = 'product_' . $id;
+        $key = 'product_'.$id;
 
         if (isset($cart[$key])) {
             unset($cart[$key]);
             session()->put('cart', $cart);
+
             return redirect()->route('items.index')->with('success', 'Elemento eliminado exitosamente.');
         } else {
             return redirect()->route('items.index')->with('error', 'Elemento no encontrado.');
         }
     }
-
 }

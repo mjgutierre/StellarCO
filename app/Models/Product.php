@@ -67,7 +67,9 @@ class Product extends Model
 
     public function getImage(): string
     {
-        return $this->attributes['image'];
+        // return $this->attributes['image'];
+        return asset("storage/{$this->image}");
+
     }
 
     public function getCreatedAt(): string

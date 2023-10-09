@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="breadcrumbs">
-        <a href="{{ route('admin.index') }}">@lang('messages.home')</a> /
+        <a href="{{ route('admin.statistics.index') }}">@lang('messages.home')</a> /
         <a href="{{ route('admin.product.index') }}">@lang('messages.product')</a> /
         {{ $viewData["product"]->getName() }} 
     </div>

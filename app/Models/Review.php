@@ -84,12 +84,12 @@ class Review extends Model
         return $this->belongsTo(Product::class);
     }
 
-     //CLASS METHODS
-     public static function validate(Request $request): void
-     {
-         $request->validate([
+    //CLASS METHODS
+    public static function validate(Request $request): void
+    {
+        $request->validate([
             'title' => 'required|max:255',
-            'description' => 'required'
-         ]);
-     }
+            'description' => 'required',
+        ]);
+    }
 }

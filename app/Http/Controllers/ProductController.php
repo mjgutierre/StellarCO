@@ -11,7 +11,7 @@ class ProductController extends Controller
     {
         $viewData = [];
         $viewData['title'] = 'Products';
-    
+
         switch ($order) {
             case 'quantasc':
                 $viewData['products'] = Product::orderBy('quantity', 'asc')->get();
@@ -33,14 +33,13 @@ class ProductController extends Controller
                 $viewData['products'] = Product::all();
                 $orderingDescription = '';
         }
-    
+
         if ($orderingDescription) {
-            $viewData['title'] .= ' - Ordered by ' . $orderingDescription;
+            $viewData['title'] .= ' - Ordered by '.$orderingDescription;
         }
-    
+
         return view('product.index')->with('viewData', $viewData);
     }
-
 
     public function show(int $id): View
     {

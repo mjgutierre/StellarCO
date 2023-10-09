@@ -7,7 +7,7 @@
             <div class="card custom-card create">
                 <div class="card-body">
                     <h5 class="card-title">@lang('messages.CreateNewRocket')</h5>
-                    <form method="POST" action="{{ route('admin.product.save') }}">
+                    <form method="POST" action="{{ route('admin.product.save') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">@lang('messages.name')</label>
@@ -30,7 +30,7 @@
                             <input type="text" class="form-control" id="location" name="location"  value="{{ old('location') }}" placeholder="Ingrese la ubicación" required />
                         </div>
                         <div class="mb-3">
-                            <label for="image" class="form-label">@lang('messages.imagen')</label>
+                            <label for="image" class="form-label">@lang('messages.image')</label>
                             <input class="form-control" type="file" name="image">
                         </div>
                         <button type="submit" class="btn btn-primary">@lang('messages.send')</button>

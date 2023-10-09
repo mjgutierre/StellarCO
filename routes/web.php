@@ -22,13 +22,12 @@ Route::get('/products/ordered/{order}', 'App\Http\Controllers\ProductController@
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->name('product.show');
 
 //REVIEWS
-Route::post('/products/{id}/review', 'App\Http\Controllers\ReviewController@save')->name("review.save");
+Route::post('/products/{id}/review', 'App\Http\Controllers\ReviewController@save')->name('review.save');
 
 //ITEMS
 Route::get('/items', 'App\Http\Controllers\ItemController@index')->name('items.index');
-Route::post('/items','App\Http\Controllers\ItemController@store')->name('items.store');
+Route::post('/items', 'App\Http\Controllers\ItemController@store')->name('items.store');
 Route::delete('/items/{id}', 'App\Http\Controllers\ItemController@destroy')->name('items.destroy');
-
 
 Route::middleware('admin')->group(function () {
     //ADMIN
