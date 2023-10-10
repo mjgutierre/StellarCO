@@ -3,7 +3,7 @@
 return [
     'home' => 'Inicio',
     'product' => 'Productos',
-    'AllProducts' => 'Todos los productos',
+    'AllProducts' => 'Todos',
     'cart' => 'Carrito',
     'register' => 'Registrarse',
     'WelcomeAdmin' => 'Bienvenido Administrador',
