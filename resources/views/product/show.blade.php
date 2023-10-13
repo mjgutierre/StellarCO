@@ -13,7 +13,7 @@
                 <div class="col-md-6">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="{{ $viewData['product']->getImage() }}" alt="NombreCohete">
+                          <img src="{{ $viewData['product']->getImage() }}" class="img-fluid w-100" alt="{{ $viewData['product']->getName() }}">
                         </div>
                     </div>
                 </div>
@@ -34,13 +34,20 @@
                     </div>
                 </div>
             </div>
-            
-            @foreach($viewData["product"]->getReviews() as $review) 
-                    <div class="review">
-                        <h5 class="product-title">{{ $review->getTitle() }}</h5><br/>
-                        <p>{{ $review->getDescription() }}</p><br/>
-                    </div>
-            @endforeach
+
+            <div>
+              <h3>@lang('messages.Reviews')</h3>
+              @foreach($viewData["product"]->getReviews() as $review) 
+                      <div class="card">
+                        <div class="card-header">
+                          @lang('messages.title'): {{ $review->getTitle() }}
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">@lang('messages.description'): {{ $review->getDescription() }}</li>
+                        </ul>
+                      </div>
+              @endforeach
+            </div>
         </div>
 
         <div class="container">
@@ -56,6 +63,6 @@
               <input type="text" class="form-control" id="description" name="description" placeholder="@lang('messages.AddDescription')" required />
             </div>
             <button type="submit" class="btn btn-primary">@lang('messages.send')</button>
-        </form>
+          </form>
         </div>
 @endsection

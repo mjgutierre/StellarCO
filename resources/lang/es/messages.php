@@ -35,6 +35,7 @@ return [
     'description' => 'Descripción',
     'AddToCart' => 'Agregar al carrito',
     'LeaveYourReview' => 'Deja tu comentario',
+    'Reviews' => 'Comentarios',
     'UpdateProduct' => 'Actualiza el producto',
     'statistics' => 'Estadistícas',
     'name' => 'Nombre',
@@ -52,4 +53,8 @@ return [
     'image' => 'Imagen',
     'delete' => 'Eliminar',
     'update' => 'Actualizar',
+    'title' => 'Titulo',
+    'description' => 'Descripción',
+    'Products' => 'Productos',
+    'Filters' => 'Filtros',
 ];
