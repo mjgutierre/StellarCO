@@ -3,22 +3,35 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
+use App\Models\Product;
 
 class ItemController extends Controller
 {
-    public function index()
+    public function index(): View 
     {
-        $items = session()->get('cart', []);
-
-        return view('item.index', ['items' => $items]);
+        $itemsInSession = session()->get('cart', []);
+    
+        $viewData = [];
+        $viewData['title'] = 'Cart';
+        $viewData['products'] = [];
+    
+        foreach ($itemsInSession as $itemDetails) {
+          $product = Product::find($itemDetails['product_id']);
+          if ($product) {
+              $product->quantity = $itemDetails['quantity'];  
+              $viewData['products'][] = $product;
+          }
+        }
+    
+        return view('item.index')->with('viewData', $viewData);
     }
-
-    public function store(Request $request)
+  
+    public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'price' => 'required',
             'product_id' => 'required',
-            'description' => 'required',
         ]);
 
         $cart = session()->get('cart', []);
@@ -28,9 +41,7 @@ class ItemController extends Controller
             $cart[$key]['quantity']++;
         } else {
             $cart[$key] = [
-                'price' => $request->price,
                 'product_id' => $request->product_id,
-                'description' => $request->description,
                 'quantity' => 1,
             ];
         }
@@ -39,7 +50,7 @@ class ItemController extends Controller
         return redirect()->back()->with('success', 'Producto añadido al carrito.');
     }
 
-    public function destroy($id)
+    public function destroy($id): RedirectResponse
     {
         $cart = session()->get('cart', []);
         $key = 'product_'.$id;

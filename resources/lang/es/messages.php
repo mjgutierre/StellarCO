@@ -57,4 +57,7 @@ return [
     'description' => 'Descripción',
     'Products' => 'Productos',
     'Filters' => 'Filtros',
+    'Name' => 'Nombre',
+    'Buy' => 'Comprar',
+    'NoElementsInCart' => 'No hay elementos en el carrito',
 ];

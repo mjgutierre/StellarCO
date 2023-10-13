@@ -26,9 +26,7 @@
                         <p class="product-description">@lang('messages.description'): {{ $viewData["product"]->getDescription() }}</p>
                         <form action="{{ route('items.store') }}" method="POST">
                             @csrf
-                            <input type="hidden" name="price" value="{{ $viewData['product']->getPrice() }}">
                             <input type="hidden" name="product_id" value="{{ $viewData['product']->getId() }}">
-                            <input type="hidden" name="description" value="{{ $viewData['product']->getDescription() }}">
                             <button type="submit" class="btn btn-primary">@lang('messages.AddToCart')</button>
                         </form>
                     </div>
