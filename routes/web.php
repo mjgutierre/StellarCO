@@ -29,11 +29,12 @@ Route::get('/items', 'App\Http\Controllers\ItemController@index')->name('items.i
 Route::post('/items', 'App\Http\Controllers\ItemController@store')->name('items.store');
 Route::delete('/items/{id}', 'App\Http\Controllers\ItemController@destroy')->name('items.destroy');
 
-Route::middleware('admin')->group(function () {
+// Route::middleware('admin')->group(function () {
     //ADMIN
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminStatisticsController@index')->name('admin.statistics.index');
     //ADMIN-PRODUCTS
     Route::get('/admin/products/', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.index');
+    Route::get('/admin/products/ordered/{order}', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.ordered');
     Route::get('/admin/products/products-ordered-ascending', 'App\Http\Controllers\Admin\AdminProductController@getProductsOrderedAsc')->name('admin.product.ordered-asc');
     Route::get('/admin/products/products-ordered-descending', 'App\Http\Controllers\Admin\AdminProductController@getProductsOrderedDsc')->name('admin.product.ordered-dsc');
     Route::get('/admin/products/products-ordered-ascending-by-name', 'App\Http\Controllers\Admin\AdminProductController@getProductsOrderedNameAsc')->name('admin.product.ordered-name-asc');
@@ -46,6 +47,6 @@ Route::middleware('admin')->group(function () {
 
     //ADMIN-STATISTICS
     Route::get('/admin/statistics/user-list', 'App\Http\Controllers\Admin\AdminStatisticsController@users')->name('admin.statistics.users');
-});
+//});
 
 Auth::routes();
