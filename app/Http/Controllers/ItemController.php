@@ -15,13 +15,16 @@ class ItemController extends Controller
     
         $viewData = [];
         $viewData['title'] = 'Cart';
+        $viewData['totalToPay'] = 0;
         $viewData['products'] = [];
+
     
         foreach ($itemsInSession as $itemDetails) {
           $product = Product::find($itemDetails['product_id']);
           if ($product) {
               $product->quantity = $itemDetails['quantity'];  
               $viewData['products'][] = $product;
+              $viewData['totalToPay'] += $product->getPrice() * $itemDetails['quantity'];
           }
         }
     

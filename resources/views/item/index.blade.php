@@ -11,6 +11,8 @@
 </div>
 @endif
 
+
+
 @section('content')
   @forelse ($viewData["products"] as $product)
     <div class="cart">
@@ -32,5 +34,11 @@
   @empty
   <p class="cart-content">@lang('messages.NoElementsInCart')</p>
   @endforelse
+
+  @if ($viewData["products"])
+    <div class="amount-to-pay">
+      <p>@lang('messages.AmountToPay'): ${{ $viewData["totalToPay"] }}</p>
+    </div>
+  @endif
 @endsection
 
