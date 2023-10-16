@@ -12,33 +12,44 @@
 @endif
 
 
-
 @section('content')
-  @forelse ($viewData["products"] as $product)
-    <div class="cart">
-      <p>@lang('messages.Name'): {{ $product->getName() }}</p>
-        <p>@lang('messages.ProductPrice'): ${{ $product->getPrice() }}</p>
-        <p>@lang('messages.ProductDescription'): {{ $product->getDescription() }}</p>
-        <p>@lang('messages.quantity'): {{ $product->quantity }}</p>
-
-        <form action="{{ route('items.destroy', $product->getId()) }}" method="POST"> 
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger">@lang('messages.delete')</button>
-        </form>
-        <form action="#" method="POST">
-          @csrf
-          <button type="submit" class="btn btn-primary">@lang('messages.Buy')</button>
-      </form>
+<div class="row">
+    @forelse ($viewData["products"] as $product)
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">@lang('messages.Name'): {{ $product->getName() }}</h5>
+                <p class="card-text">@lang('messages.ProductDescription'): {{ $product->getDescription() }}</p>
+                <p class="card-text">@lang('messages.ProductPrice'): ${{ $product->getPrice() }}</p>
+                <p class="card-text">@lang('messages.quantity'): {{ $product->quantity }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <form action="{{ route('items.destroy', $product->getId()) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-sm btn-outline-danger">@lang('messages.delete')</button>
+                        </form>
+                        <form action="#" method="POST" class="ml-2">
+                            @csrf
+                            <button type="submit" class="btn btn-sm btn-outline-primary">@lang('messages.Buy')</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  @empty
-  <p class="cart-content">@lang('messages.NoElementsInCart')</p>
-  @endforelse
-
-  @if ($viewData["products"])
-    <div class="amount-to-pay">
-      <p>@lang('messages.AmountToPay'): ${{ $viewData["totalToPay"] }}</p>
+    @empty
+    <div class="col-12">
+        <p class="text-center text-muted">@lang('messages.NoElementsInCart')</p>
     </div>
-  @endif
+    @endforelse
+</div>
+
+@if ($viewData["products"])
+<div class="mt-4">
+    <div class="alert alert-info">
+        <p>@lang('messages.AmountToPay'): ${{ $viewData["totalToPay"] }}</p>
+    </div>
+</div>
+@endif
 @endsection
-
