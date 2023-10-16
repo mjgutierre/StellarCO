@@ -22,9 +22,9 @@ Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->nam
 //REVIEWS
 Route::post('/products/{id}/review', 'App\Http\Controllers\ReviewController@save')->name('review.save');
 //ITEMS
-Route::get('/items', 'App\Http\Controllers\ItemController@index')->name('items.index');
-Route::post('/items', 'App\Http\Controllers\ItemController@store')->name('items.store');
-Route::delete('/items/{id}', 'App\Http\Controllers\ItemController@destroy')->name('items.destroy');
+Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('cart.index');
+Route::post('/cart', 'App\Http\Controllers\CartController@store')->name('cart.store');
+Route::delete('/cart/{id}', 'App\Http\Controllers\CartController@destroy')->name('cart.destroy');
 
 // Route::middleware('admin')->group(function () {
     //ADMIN

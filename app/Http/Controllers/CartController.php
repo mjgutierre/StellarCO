@@ -7,7 +7,7 @@ use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use App\Models\Product;
 
-class ItemController extends Controller
+class CartController extends Controller
 {
     public function index(): View 
     {
@@ -28,7 +28,7 @@ class ItemController extends Controller
           }
         }
     
-        return view('item.index')->with('viewData', $viewData);
+        return view('cart.index')->with('viewData', $viewData);
     }
   
     public function store(Request $request): RedirectResponse
@@ -62,9 +62,9 @@ class ItemController extends Controller
             unset($cart[$key]);
             session()->put('cart', $cart);
 
-            return redirect()->route('items.index')->with('success', 'Elemento eliminado exitosamente.');
+            return redirect()->route('cart.index')->with('success', 'Elemento eliminado exitosamente.');
         } else {
-            return redirect()->route('items.index')->with('error', 'Elemento no encontrado.');
+            return redirect()->route('cart.index')->with('error', 'Elemento no encontrado.');
         }
     }
 }

@@ -24,7 +24,7 @@
                 <p class="card-text">@lang('messages.quantity'): {{ $product->quantity }}</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <form action="{{ route('items.destroy', $product->getId()) }}" method="POST">
+                        <form action="{{ route('cart.destroy', $product->getId()) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-outline-danger">@lang('messages.delete')</button>

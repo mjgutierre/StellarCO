@@ -24,7 +24,7 @@
                         <p class="product-quantity">@lang('messages.quantity'): {{ $viewData["product"]->getQuantity() }}</p>
                         <p class="product-location">@lang('messages.location'): {{ $viewData["product"]->getLocation() }}</p>
                         <p class="product-description">@lang('messages.description'): {{ $viewData["product"]->getDescription() }}</p>
-                        <form action="{{ route('items.store') }}" method="POST">
+                        <form action="{{ route('cart.store') }}" method="POST">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $viewData['product']->getId() }}">
                             <button type="submit" class="btn btn-primary">@lang('messages.AddToCart')</button>
