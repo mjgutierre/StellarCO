@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'ShoppingCart')
+@section('title', $viewData['title'])
 
 @if(session()->has('success'))
   {{ session()->get('success') }}
@@ -29,10 +29,6 @@
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-outline-danger">@lang('messages.delete')</button>
                         </form>
-                        <form action="#" method="POST" class="ml-2">
-                            @csrf
-                            <button type="submit" class="btn btn-sm btn-outline-primary">@lang('messages.Buy')</button>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -48,7 +44,11 @@
 @if ($viewData["products"])
 <div class="mt-4">
     <div class="alert alert-info">
-        <p>@lang('messages.AmountToPay'): ${{ $viewData["totalToPay"] }}</p>
+        <h5>@lang('messages.AmountToPay'): ${{ $viewData["totalToPay"] }}</h5>
+        <form action="#" method="POST" class="ml-2">
+          @csrf
+          <button type="submit" class="btn btn-sm btn-primary">@lang('messages.Buy')</button>
+      </form>
     </div>
 </div>
 @endif
