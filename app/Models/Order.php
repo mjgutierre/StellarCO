@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+
+use App\Models\User;
+use App\Models\Item;
 
 class Order extends Model
 {
@@ -13,7 +16,6 @@ class Order extends Model
 
     /**
      * ORDER ATTRIBUTES
-     * $this->attributes['date'] - date - contains the date of the order
      * $this->attributes['address'] - string - contains the address for the order delivery
      * $this->attributes['courier'] - string - contains the name or identifier of the courier
      * $this->attributes['total'] - integer - contains the total amount of the order
@@ -37,11 +39,6 @@ class Order extends Model
     public function getId(): int
     {
         return $this->attributes['id'];
-    }
-
-    public function getDate(): string
-    {
-        return $this->attributes['date'];
     }
 
     public function getAddress(): string
@@ -85,11 +82,6 @@ class Order extends Model
     }
 
     //SETTERS
-    public function setDate(string $date): void
-    {
-        $this->attributes['date'] = $date;
-    }
-
     public function setAddress(string $address): void
     {
         $this->attributes['address'] = $address;
@@ -126,7 +118,7 @@ class Order extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function orderItems(): HasMany
+    public function items(): HasMany
     {
         return $this->hasMany(OrderItem::class);
     }
