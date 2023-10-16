@@ -61,4 +61,5 @@ return [
     'Buy' => 'Comprar',
     'NoElementsInCart' => 'No hay elementos en el carrito',
     'AmountToPay' => 'Cantidad a pagar',
+    'Show' => 'Mostrar',
 ];

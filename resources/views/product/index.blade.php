@@ -4,8 +4,6 @@
 <div class="container-fluid d-flex justify-content-center indexproducts">
     <div class="row mt-5">
 
-      <h3>@lang('messages.Products')</h3>
-
       <div class="filters breadcrumbs">
           <h5>@lang('messages.Filters')</h5>
           <div class="btn btn-primary">

@@ -10,7 +10,7 @@ class ProductController extends Controller
     public function index(string $order = null): View
     {
         $viewData = [];
-        $viewData['title'] = 'Products';
+        $viewData['title'] = trans('messages.Products');
 
         switch ($order) {
             case 'quantasc':
@@ -45,7 +45,7 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $viewData = [
-            'title' => $product['name'],
+            'title' => trans('messages.Show'),
             'product' => $product,
         ];
 

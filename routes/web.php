@@ -18,12 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index');
 Route::get('/products', 'App\Http\Controllers\ProductController@index')->name('product.index');
 Route::get('/products/ordered/{order}', 'App\Http\Controllers\ProductController@index')->name('product.ordered');
-
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->name('product.show');
-
 //REVIEWS
 Route::post('/products/{id}/review', 'App\Http\Controllers\ReviewController@save')->name('review.save');
-
 //ITEMS
 Route::get('/items', 'App\Http\Controllers\ItemController@index')->name('items.index');
 Route::post('/items', 'App\Http\Controllers\ItemController@store')->name('items.store');
@@ -35,16 +32,11 @@ Route::delete('/items/{id}', 'App\Http\Controllers\ItemController@destroy')->nam
     //ADMIN-PRODUCTS
     Route::get('/admin/products/', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.index');
     Route::get('/admin/products/ordered/{order}', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.ordered');
-    Route::get('/admin/products/products-ordered-ascending', 'App\Http\Controllers\Admin\AdminProductController@getProductsOrderedAsc')->name('admin.product.ordered-asc');
-    Route::get('/admin/products/products-ordered-descending', 'App\Http\Controllers\Admin\AdminProductController@getProductsOrderedDsc')->name('admin.product.ordered-dsc');
-    Route::get('/admin/products/products-ordered-ascending-by-name', 'App\Http\Controllers\Admin\AdminProductController@getProductsOrderedNameAsc')->name('admin.product.ordered-name-asc');
-    Route::get('/admin/products/products-ordered-descending-by-name', 'App\Http\Controllers\Admin\AdminProductController@getProductsOrderedNameDsc')->name('admin.product.ordered-name-dsc');
     Route::post('/admin/products/save', 'App\Http\Controllers\Admin\AdminProductController@save')->name('admin.product.save');
     Route::get('/admin/products/create', 'App\Http\Controllers\Admin\AdminProductController@create')->name('admin.product.create');
     Route::get('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@show')->name('admin.product.show');
     Route::delete('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@destroy')->name('admin.product.destroy');
     Route::put('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@update')->name('admin.product.update');
-
     //ADMIN-STATISTICS
     Route::get('/admin/statistics/user-list', 'App\Http\Controllers\Admin\AdminStatisticsController@users')->name('admin.statistics.users');
 //});

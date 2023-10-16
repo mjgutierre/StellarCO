@@ -68,6 +68,7 @@
                     </div>
                     <div class="container my-5 content-container">
                         <div class="overlay"></div>
+                        <h2>@yield('title')</h2>
                         @yield('content')
                     </div>
                 </div>
@@ -75,20 +76,7 @@
         </div>
     </div>
 
-    <script>
-        const sidebar = document.getElementById('sidebar');
-        const mainContent = document.getElementById('main-content');
-
-        function openSidebar() {
-            sidebar.classList.add('active');
-            mainContent.style.marginLeft = '250px';
-        }
-
-        function closeSidebar() {
-            sidebar.classList.remove('active');
-            mainContent.style.marginLeft = '0';
-        }
-    </script>
+    
 </body>
-
+<script src="{{ asset('js/main.js') }}"></script>
 </html>

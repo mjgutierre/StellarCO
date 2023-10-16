@@ -3,9 +3,8 @@
 @section('content')
 <div class="container-fluid d-flex justify-content-center indexproducts">
     <div class="row mt-5">
-
       <div class="filters breadcrumbs">
-        <h5>@lang('messages.Filters')</h5>
+        
         <div class="btn btn-primary">
             <a href="{{ route('admin.product.ordered', ['order' => 'quantasc']) }}">@lang('messages.QuantityFromSmallestToLargest')</a>
         </div>
@@ -19,7 +18,7 @@
             <a href="{{ route('admin.product.ordered', ['order' => 'namedesc']) }}">@lang('messages.NameZz-Aa')</a>
         </div>
         <div>
-            <a href="{{ route('product.index') }}" class="btn btn-primary">@lang('messages.AllProducts')</a>
+            <a href="{{ route('admin.product.index') }}" class="btn btn-primary">@lang('messages.AllProducts')</a>
         </div>
       </div>
 
