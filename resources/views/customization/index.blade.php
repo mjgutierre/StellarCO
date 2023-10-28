@@ -31,10 +31,12 @@
                         <input type="hidden" name="productId" value="{{ $viewData['product']->getId() }}">
                         <button type="submit" class="btn btn-primary mt-3">Generate Design</button>
                     </form>
-                    <div class="generated-design mt-4">
-                        <h4>Generated Design</h4>
-                        <img id="generatedImage" src="{{ $viewData['generatedImageiUrl'] }}" alt="Generated design by AI" class="img-fluid w-100">
-                    </div>
+                    @if($viewData['generatedImageiUrl'] != '')
+                      <div class="generated-design mt-4">
+                          <h4>Generated Design</h4>
+                          <img id="generatedImage" src="{{ $viewData['generatedImageiUrl'] }}" alt="Generated design by AI" class="img-fluid w-100">
+                      </div>
+                    @endif
                 </div>
             </div>
         </div>

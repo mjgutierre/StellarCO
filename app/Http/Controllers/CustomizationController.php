@@ -25,7 +25,6 @@ class CustomizationController extends Controller
 
         if (isset($cart[$key])) {
           $viewData['generatedImageiUrl'] = $cart[$key]['generatedImageiUrl'];
-          $viewData['title'] = 'Made by you';
         }
 
         return view('customization.index')->with('viewData', $viewData);
@@ -56,6 +55,7 @@ class CustomizationController extends Controller
 
         if (isset($cart[$key])) {
             $cart[$key]['generatedImageiUrl'] = $imageUrl;
+            $cart[$key]['prompt'] = $request->input('designDescription');
         }
         session()->put('cart', $cart);
 
