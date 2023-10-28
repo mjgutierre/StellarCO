@@ -21,10 +21,12 @@ Route::get('/products/ordered/{order}', 'App\Http\Controllers\ProductController@
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->name('product.show');
 //REVIEWS
 Route::post('/products/{id}/review', 'App\Http\Controllers\ReviewController@save')->name('review.save');
-//ITEMS
+//CART
 Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('cart.index');
 Route::post('/cart', 'App\Http\Controllers\CartController@store')->name('cart.store');
 Route::delete('/cart/{id}', 'App\Http\Controllers\CartController@destroy')->name('cart.destroy');
+//CUSTOMIZATION
+Route::get('/customization/{id}', 'App\Http\Controllers\CustomizationController@index')->name('customization.index');
 
 // Route::middleware('admin')->group(function () {
     //ADMIN

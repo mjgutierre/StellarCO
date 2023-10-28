@@ -30,6 +30,7 @@
                             <button type="submit" class="btn btn-sm btn-outline-danger">@lang('messages.delete')</button>
                         </form>
                     </div>
+                    <a href="{{ route('customization.index', ['id'=> $product->getId()]) }}">Customize</a>
                 </div>
             </div>
         </div>
