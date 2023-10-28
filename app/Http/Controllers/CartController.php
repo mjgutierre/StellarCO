@@ -46,6 +46,7 @@ class CartController extends Controller
             $cart[$key] = [
                 'product_id' => $request->product_id,
                 'quantity' => 1,
+                'generatedImageiUrl' => ''
             ];
         }
         session()->put('cart', $cart);

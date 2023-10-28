@@ -13,40 +13,52 @@ class CustomizationController extends Controller
     public function index(int $id): View
     {
         $product = Product::findOrFail($id);
+
         $viewData = [
-            'title' => 'Customize',
-            'product' => $product,
-            'generatedImage' => '',
+          'title' => 'Customize',
+          'product' => $product,
+          'generatedImageiUrl' => ''
         ];
+
+        $cart = session()->get('cart', []);
+        $key = 'product_'.$id;
+
+        if (isset($cart[$key])) {
+          $viewData['generatedImageiUrl'] = $cart[$key]['generatedImageiUrl'];
+          $viewData['title'] = 'Made by you';
+        }
 
         return view('customization.index')->with('viewData', $viewData);
     }
 
-    public function generate(Request $request): View
+    public function generate(Request $request): RedirectResponse
     {
         $request->validate([
             'designDescription' => 'required|string|max:255',
             'productId' => 'required|integer',
         ]);
 
-        $product = Product::findOrFail($request->input('productId'));
+        $productId = $request->input('productId');
+        $product = Product::findOrFail($productId);
 
         $client = OpenAI::client(env('OPENAI_API_KEY'));
         $response = $client->images()->edit([
-            'image' => fopen(public_path('storage/' . $product->image), 'r'), 
-            'prompt' => $request->input('designDescription'), 
-            'n' => 1,
-            'size' => '256x256',
-            'response_format' => 'url',
+          'image' => fopen(public_path('storage/' . $product->image), 'r'), 
+          'prompt' => $request->input('designDescription'), 
+          'n' => 1,
+          'size' => '256x256',
+          'response_format' => 'url',
         ]);
         $imageUrl = $response->data[0]->url;
 
-        $viewData = [
-          'title' => 'Customize',
-          'product' => $product,
-          'generatedImage' => $imageUrl,
-      ];
+        $cart = session()->get('cart', []);
+        $key = 'product_'.$productId;
 
-      return view('customization.index')->with('viewData', $viewData);
+        if (isset($cart[$key])) {
+            $cart[$key]['generatedImageiUrl'] = $imageUrl;
+        }
+        session()->put('cart', $cart);
+
+        return redirect()->back()->with('success', 'Imagen generada.');
     }
 }

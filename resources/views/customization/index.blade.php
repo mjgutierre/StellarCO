@@ -33,8 +33,7 @@
                     </form>
                     <div class="generated-design mt-4">
                         <h4>Generated Design</h4>
-                        <img id="generatedImage" src="{{ $viewData['generatedImage'] }}" alt="Generated design by AI" class="img-fluid w-100">
-                        <p id="awaitingPrompt" class="text-muted">Awaiting your design prompt...</p>
+                        <img id="generatedImage" src="{{ $viewData['generatedImageiUrl'] }}" alt="Generated design by AI" class="img-fluid w-100">
                     </div>
                 </div>
             </div>
