@@ -27,6 +27,7 @@ Route::post('/cart', 'App\Http\Controllers\CartController@store')->name('cart.st
 Route::delete('/cart/{id}', 'App\Http\Controllers\CartController@destroy')->name('cart.destroy');
 //CUSTOMIZATION
 Route::get('/customization/{id}', 'App\Http\Controllers\CustomizationController@index')->name('customization.index');
+Route::post('/customization/generate','App\Http\Controllers\CustomizationController@generate')->name('customization.generate');
 
 // Route::middleware('admin')->group(function () {
     //ADMIN
