@@ -21,10 +21,8 @@ class CustomizationController extends Controller
         ];
 
         $cart = session()->get('cart', []);
-        $key = 'product_'.$id;
-
-        if (isset($cart[$key])) {
-          $viewData['generatedImageiUrl'] = $cart[$key]['generatedImageiUrl'];
+        if (isset($cart[$id])) {
+          $viewData['generatedImageiUrl'] = $cart[$id]['generatedImageiUrl'];
         }
 
         return view('customization.index')->with('viewData', $viewData);
@@ -51,11 +49,9 @@ class CustomizationController extends Controller
         $imageUrl = $response->data[0]->url;
 
         $cart = session()->get('cart', []);
-        $key = 'product_'.$productId;
-
-        if (isset($cart[$key])) {
-            $cart[$key]['generatedImageiUrl'] = $imageUrl;
-            $cart[$key]['prompt'] = $request->input('designDescription');
+        if (isset($cart[$productId])) {
+            $cart[$productId]['generatedImageiUrl'] = $imageUrl;
+            $cart[$productId]['prompt'] = $request->input('designDescription');
         }
         session()->put('cart', $cart);
 
