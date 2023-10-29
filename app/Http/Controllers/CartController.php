@@ -69,41 +69,4 @@ class CartController extends Controller
             return redirect()->route('cart.index')->with('error', 'Elemento no encontrado.');
         }
     }
-
-    public function purchase(Request $request)
-    {
-      $cart = session()->get('cart', []);
-
-      if ($cart) {
-          $userId = Auth::user()->getId();
-          $order = Order::create([
-              'user_id' => $userId,
-              'total' => 0,
-          ]);
-
-          $total = 0;
-          $productsInCart = Product::findMany(array_keys($cart));
-
-          foreach ($productsInCart as $product) {
-            $cartProductInfo = $cart[$product->getId()];
-            $item = Item::create([
-                'price' => $product->getPrice(),
-                'prompt' => $cart[$product->getId()]['prompt'],
-                'product_id' => $product->getId(),
-                'order_id' => $order->getId(),
-            ]);
-            $total = $total + ($product->getPrice()*$cart[$product->getId()]['quantity']);
-          }
-          $order->setTotal($total);
-          $order->save();
-
-          $viewData = [
-            'title' => 'Purchase - Online Store"',
-            'order' => $order
-          ];
-          return view('cart.purchase')->with("viewData", $viewData);
-      }else {
-        return redirect()->route('cart.index')->with('error', 'No hay elemtos en el carrito.');
-      }
-    }
 }

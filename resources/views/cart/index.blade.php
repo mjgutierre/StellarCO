@@ -46,10 +46,9 @@
 <div class="mt-4">
     <div class="alert alert-info">
         <h5>@lang('messages.AmountToPay'): ${{ $viewData["totalToPay"] }}</h5>
-        <form action="#" method="POST" class="ml-2">
-          @csrf
+        <a href="{{ route('checkout.index') }}">
           <button type="submit" class="btn btn-sm btn-primary">@lang('messages.Buy')</button>
-      </form>
+        </a>
     </div>
 </div>
 @endif

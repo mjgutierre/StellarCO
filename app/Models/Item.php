@@ -28,6 +28,7 @@ class Item extends Model
         'price',
         'prompt',
         'product_id',
+        'order_id'
     ];
 
     //GETTERS
