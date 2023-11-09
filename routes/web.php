@@ -19,12 +19,17 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index')
 Route::get('/products', 'App\Http\Controllers\ProductController@index')->name('product.index');
 Route::get('/products/ordered/{order}', 'App\Http\Controllers\ProductController@index')->name('product.ordered');
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->name('product.show');
+
 //REVIEWS
 Route::post('/products/{id}/review', 'App\Http\Controllers\ReviewController@save')->name('review.save');
+
 //ITEMS
 Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('cart.index');
 Route::post('/cart', 'App\Http\Controllers\CartController@store')->name('cart.store');
 Route::delete('/cart/{id}', 'App\Http\Controllers\CartController@destroy')->name('cart.destroy');
+
+//LANG
+// Route::get('/{locale}', 'App\Http\Controllers\LangController@locale')->name('lang');
 
 // Route::middleware('admin')->group(function () {
     //ADMIN

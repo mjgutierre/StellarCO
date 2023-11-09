@@ -29,7 +29,9 @@
                     @guest
                     <a class="nav-link active" href="{{ route('login') }}">Login</a>
                     <a class="nav-link active" href="{{ route('register') }}">@lang('messages.register')</a>
-                    @else
+                    @else 
+                    <a class="nav-link active" href="'/lang/es'" >es</a>
+                    <a class="nav-link active" href="'/lang/en'" >en</a>  
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('cart.index') }}">@lang('messages.cart')</a>
                     </li>

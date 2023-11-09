@@ -53,8 +53,6 @@ return [
     'image' => 'Imagen',
     'delete' => 'Eliminar',
     'update' => 'Actualizar',
-    'title' => 'Titulo',
-    'description' => 'Descripción',
     'Products' => 'Productos',
     'Filters' => 'Filtros',
     'Name' => 'Nombre',
