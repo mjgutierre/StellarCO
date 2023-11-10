@@ -62,4 +62,9 @@ return [
     'NoElementsInCart' => 'No hay elementos en el carrito',
     'AmountToPay' => 'Cantidad a pagar',
     'Show' => 'Mostrar',
+    'Address' => 'Dirección',
+    'Total' => 'Total',
+    'Status' => 'Estado',
+    'TrackingNumber' => 'Número de seguimiento',
+    'orders' => 'Ordenes',
 ];

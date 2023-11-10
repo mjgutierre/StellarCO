@@ -31,6 +31,8 @@ Route::get('/customization/{id}', 'App\Http\Controllers\CustomizationController@
 //CHECKOUT
 Route::get('/checkout', 'App\Http\Controllers\CheckoutController@index')->name('checkout.index');
 Route::post('/checkout/confirm', 'App\Http\Controllers\CheckoutController@confirm')->name('checkout.confirm');
+//ORDERS
+Route::get('/orders', 'App\Http\Controllers\OrderController@index')->name('order.index');
 
 // Route::middleware('admin')->group(function () {
     //ADMIN

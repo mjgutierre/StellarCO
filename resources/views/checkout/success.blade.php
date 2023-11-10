@@ -10,7 +10,7 @@
             
             <div class="mt-4">
                 <a href="{{ route('product.index') }}" class="btn btn-primary">Buy More</a>
-                <a href="" class="btn btn-secondary">See Orders</a>
+                <a href="{{ route('order.index') }}" class="btn btn-secondary">See Orders</a>
             </div>
         </div>
     </div>
