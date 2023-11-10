@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Response;
 
 class AdminProductController extends Controller
 {
@@ -97,5 +98,66 @@ class AdminProductController extends Controller
         Product::findOrFail($id)->update($request->all());
 
         return redirect()->route('admin.product.index');
+    }
+
+    public function download(Request $request)
+    {
+      $type = $request->input('type', 'csv');
+      
+      if ($type === 'csv') {
+        $products = Product::latest()->take(10)->get();
+
+        $filename = "products_" . date('Ymd') . ".csv";
+  
+        $headers = [
+            "Content-type" => "text/csv",
+            "Content-Disposition" => "attachment; filename={$filename}",
+            "Pragma" => "no-cache",
+            "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
+            "Expires" => "0"
+        ];
+  
+        $callback = function() use ($products) {
+            $file = fopen('php://output', 'w');
+  
+            fputcsv($file, ['ID', 'Name', 'Description', 'Price', 'Created At']);
+  
+            foreach ($products as $product) {
+                fputcsv($file, [$product->id, $product->name, $product->description, $product->price, $product->created_at]);
+            }
+  
+            fclose($file);
+        };
+  
+        return Response::stream($callback, 200, $headers);
+      } elseif ($type === 'txt') {
+        $products = Product::latest()->take(10)->get();
+
+        $filename = "products_" . date('Ymd') . ".txt";
+
+        $headers = [
+            "Content-type" => "text/plain",
+            "Content-Disposition" => "attachment; filename={$filename}",
+            "Pragma" => "no-cache",
+            "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
+            "Expires" => "0"
+        ];
+
+        $callback = function() use ($products) {
+            $file = fopen('php://output', 'w');
+
+            fputs($file, "ID\tName\tDescription\tPrice\tCreated At\n");
+
+            foreach ($products as $product) {
+                fputs($file, "{$product->id}\t{$product->name}\t{$product->description}\t{$product->price}\t{$product->created_at}\n");
+            }
+
+            fclose($file);
+        };
+
+        return Response::stream($callback, 200, $headers);
+      }
+
+      abort(404, 'File type not supported.');
     }
 }

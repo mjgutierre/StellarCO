@@ -22,6 +22,11 @@
         </div>
       </div>
 
+      <div>
+        <a href="{{ route('products.download', ['type' => 'csv']) }}" class="btn btn-primary">Download CSV</a>
+        <a href="{{ route('products.download', ['type' => 'txt']) }}" class="btn btn-primary">Download Txt</a>
+      </div>
+
        @foreach ($viewData["products"] as $product)
        <div class="col-md-4 mb-4">
            <div class="card">

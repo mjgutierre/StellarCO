@@ -39,6 +39,7 @@ Route::get('/orders', 'App\Http\Controllers\OrderController@index')->name('order
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminStatisticsController@index')->name('admin.statistics.index');
     //ADMIN-PRODUCTS
     Route::get('/admin/products/', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.index');
+    Route::get('/products-download', 'App\Http\Controllers\Admin\AdminProductController@download')->name('products.download');
     Route::get('/admin/products/ordered/{order}', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.ordered');
     Route::post('/admin/products/save', 'App\Http\Controllers\Admin\AdminProductController@save')->name('admin.product.save');
     Route::get('/admin/products/create', 'App\Http\Controllers\Admin\AdminProductController@create')->name('admin.product.create');
