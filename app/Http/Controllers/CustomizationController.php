@@ -39,9 +39,8 @@ class CustomizationController extends Controller
         $product = Product::findOrFail($productId);
 
         $client = OpenAI::client(env('OPENAI_API_KEY'));
-        $response = $client->images()->edit([
+        $response = $client->images()->variation([
           'image' => fopen(public_path('storage/' . $product->image), 'r'), 
-          'prompt' => $request->input('designDescription'), 
           'n' => 1,
           'size' => '256x256',
           'response_format' => 'url',
