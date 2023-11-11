@@ -34,7 +34,7 @@ Route::post('/checkout/confirm', 'App\Http\Controllers\CheckoutController@confir
 //ORDERS
 Route::get('/orders', 'App\Http\Controllers\OrderController@index')->name('order.index');
 
-// Route::middleware('admin')->group(function () {
+Route::middleware('admin')->group(function () {
     //ADMIN
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminStatisticsController@index')->name('admin.statistics.index');
     //ADMIN-PRODUCTS
@@ -48,6 +48,5 @@ Route::get('/orders', 'App\Http\Controllers\OrderController@index')->name('order
     Route::put('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@update')->name('admin.product.update');
     //ADMIN-STATISTICS
     Route::get('/admin/statistics/user-list', 'App\Http\Controllers\Admin\AdminStatisticsController@users')->name('admin.statistics.users');
-//});
-
+});
 Auth::routes();
