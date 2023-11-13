@@ -33,6 +33,8 @@ Route::get('/checkout', 'App\Http\Controllers\CheckoutController@index')->name('
 Route::post('/checkout/confirm', 'App\Http\Controllers\CheckoutController@confirm')->name('checkout.confirm');
 //ORDERS
 Route::get('/orders', 'App\Http\Controllers\OrderController@index')->name('order.index');
+//PROFILE
+Route::get('/profile', 'App\Http\Controllers\ProfileController@index')->name('profile.index');
 
 Route::middleware('admin')->group(function () {
     //ADMIN

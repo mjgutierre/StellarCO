@@ -3,17 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    public function index(string $order = null): View
+    public function index(): View
     {
-      $product = Product::findOrFail($id);
-      $viewData = [
-          'title' => trans('messages.Show'),
-          'product' => $product,
-      ];
+      $viewData = [];
+      $viewData['title'] = trans('messages.profile');
+      $viewData['user'] =  Auth::user();
 
-      return view('product.show')->with('viewData', $viewData);
+      return view('profile.index')->with('viewData', $viewData);
     }
 }

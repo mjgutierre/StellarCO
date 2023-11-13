@@ -69,5 +69,6 @@ return [
   'orders' => 'Orders',
   'SignInToBuy' => 'Sign in to buy',
   'PendingTrakingNum' => 'Pending tracking number',
+  'profile' => 'Profile',
 ];
 

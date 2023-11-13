@@ -69,4 +69,5 @@ return [
     'orders' => 'Ordenes',
     'SignInToBuy' => 'Inicia sesión para comprar',
     'PendingTrakingNum' => 'Número de seguimiento pendiente',
+    'profile' => 'Perfil',
 ];
