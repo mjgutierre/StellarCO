@@ -33,7 +33,7 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item"> @lang('messages.location'): {{ $product->getLocation() }}</li>
             <li class="list-group-item">@lang('messages.quantity'): {{ $product->getQuantity() }}</li>
-            <li class="list-group-item">@lang('messages.price'): ${{ $product->getPrice() }}</li>
+            <li class="list-group-item">@lang('messages.price'): ${{ number_format($product->getPrice(), 2) }}</li>
           </ul>
           <div class="card-body">
             <a href="{{ route('product.show', ['id'=> $product->getId()]) }}" class="card-link">@lang('messages.LearnMore')</a>

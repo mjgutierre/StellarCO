@@ -20,7 +20,7 @@
                 <div class="col-md-6">
                     <div class="product-details">
                         <h2 class="product-title">{{ $viewData["product"]->getName() }}</h2>
-                        <p class="product-price"> @lang('messages.price'): ${{ $viewData["product"]->getPrice() }}</p>
+                        <p class="product-price"> @lang('messages.price'): ${{ number_format($viewData["product"]->getPrice(), 2) }}</p>
                         <p class="product-quantity">@lang('messages.quantity'): {{ $viewData["product"]->getQuantity() }}</p>
                         <p class="product-location">@lang('messages.location'): {{ $viewData["product"]->getLocation() }}</p>
                         <p class="product-description">@lang('messages.description'): {{ $viewData["product"]->getDescription() }}</p>

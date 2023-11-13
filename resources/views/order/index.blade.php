@@ -8,7 +8,7 @@
         <div class="card mb-4 shadow-sm">
             <div class="card-body">
                 <h5 class="card-title">@lang('messages.Address'): {{ $order->getAddress() }}</h5>
-                <p class="card-text">@lang('messages.Total'): ${{ $order->getTotal() }}</p>
+                <p class="card-text">@lang('messages.Total'): ${{ number_format($order->getTotal(), 2) }}</p>
                 <p class="card-text">@lang('messages.Status'): {{ $order->getStatus() }}</p>
                 <p class="card-text">
                   @lang('messages.TrackingNumber'):

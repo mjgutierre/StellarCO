@@ -20,7 +20,7 @@
             <div class="card-body">
                 <h5 class="card-title">@lang('messages.Name'): {{ $product->getName() }}</h5>
                 <p class="card-text">@lang('messages.ProductDescription'): {{ $product->getDescription() }}</p>
-                <p class="card-text">@lang('messages.ProductPrice'): ${{ $product->getPrice() }}</p>
+                <p class="card-text">@lang('messages.ProductPrice'): ${{ number_format($product->getPrice(), 2) }}</p>
                 <p class="card-text">@lang('messages.quantity'): {{ $product->quantity }}</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
@@ -45,7 +45,7 @@
 @if ($viewData["products"])
 <div class="mt-4">
   <div class="alert alert-info">
-      <h5>@lang('messages.AmountToPay'): ${{ $viewData["totalToPay"] }}</h5>
+      <h5>@lang('messages.AmountToPay'): ${{ number_format($viewData["totalToPay"], 2) }}</h5>
       @auth
           <a href="{{ route('checkout.index') }}">
               <button type="submit" class="btn btn-sm btn-primary">@lang('messages.Buy')</button>
