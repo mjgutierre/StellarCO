@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Order;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    public function index(string $order = null): View
+    public function index(): View
     {
       $viewData = [];
       $viewData['title'] = 'Ordenes';
-
-      $viewData['orders'] = Order::all();
+      $viewData['orders'] =  Auth::user()->orders;
 
       return view('order.index')->with('viewData', $viewData);
     }
