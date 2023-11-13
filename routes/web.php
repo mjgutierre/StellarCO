@@ -13,29 +13,35 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 //PRODUCTS
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index');
 Route::get('/products', 'App\Http\Controllers\ProductController@index')->name('product.index');
 Route::get('/products/ordered/{order}', 'App\Http\Controllers\ProductController@index')->name('product.ordered');
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->name('product.show');
+
 //REVIEWS
 Route::post('/products/{id}/review', 'App\Http\Controllers\ReviewController@save')->name('review.save');
+
 //CART
 Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('cart.index');
 Route::post('/cart', 'App\Http\Controllers\CartController@store')->name('cart.store');
 Route::delete('/cart/{id}', 'App\Http\Controllers\CartController@destroy')->name('cart.destroy');
+
 //CUSTOMIZATION
 Route::post('/customization/generate','App\Http\Controllers\CustomizationController@generate')->name('customization.generate');
 Route::get('/customization/{id}', 'App\Http\Controllers\CustomizationController@index')->name('customization.index');
+
 //CHECKOUT
 Route::get('/checkout', 'App\Http\Controllers\CheckoutController@index')->name('checkout.index');
 Route::post('/checkout/confirm', 'App\Http\Controllers\CheckoutController@confirm')->name('checkout.confirm');
+
 //ORDERS
 Route::get('/orders', 'App\Http\Controllers\OrderController@index')->name('order.index');
+
 //PROFILE
 Route::get('/profile', 'App\Http\Controllers\ProfileController@index')->name('profile.index');
 
+//ADMIN
 // Route::middleware('admin')->group(function () {
     //ADMIN-STATISTICS
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminStatisticsController@index')->name('admin.statistics.index');

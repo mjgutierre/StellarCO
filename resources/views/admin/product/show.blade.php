@@ -11,18 +11,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="{{ $viewData['product']->getImage() }}" alt="{{ $viewData['product']->getName() }}">
-                        </div>
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img src="{{ $viewData['product']->getImage() }}" class="img-fluid w-100" alt="{{ $viewData['product']->getName() }}">
                     </div>
-
-                    @foreach($viewData["product"]->getReviews() as $review) 
-                        <div class="review">
-                            <h5 class="product-title">{{ $review->getTitle() }}</h5><br/>
-                            <p>{{ $review->getDescription() }}</p><br/>
-                        </div>
-                    @endforeach
+                  </div>
+                  <div>
+                  <h3>@lang('messages.Reviews')</h3>
+                  @foreach($viewData["product"]->getReviews() as $review) 
+                      <div class="review">
+                          <p>@lang('messages.title'): {{ $review->getTitle() }}</p>
+                          <p>@lang('messages.description'): {{ $review->getDescription() }}</p><br/>
+                      </div>
+                  @endforeach
+                  </div>
                 </div>
                 <div class="col-md-5">
                     <form action="{{ route('admin.product.update', $viewData['product']->getId()) }}" method="POST">

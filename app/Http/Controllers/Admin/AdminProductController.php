@@ -18,24 +18,24 @@ class AdminProductController extends Controller
     public function index(string $order = null): View
     {
         $viewData = [];
-        $viewData['title'] = 'Products';
+        $viewData['title'] = trans('messages.Products');
         
         switch ($order) {
           case 'quantasc':
               $viewData['products'] = Product::orderBy('quantity', 'asc')->get();
-              $orderingDescription = 'Quantity Ascending';
+              $orderingDescription = trans('messages.QuantityAscending');
               break;
           case 'quantdesc':
               $viewData['products'] = Product::orderBy('quantity', 'desc')->get();
-              $orderingDescription = 'Quantity Descending';
+              $orderingDescription = trans('messages.QuantityDescending');
               break;
           case 'nameasc':
               $viewData['products'] = Product::orderBy('name', 'asc')->get();
-              $orderingDescription = 'Name Ascending';
+              $orderingDescription = trans('messages.NameAscending');
               break;
           case 'namedesc':
               $viewData['products'] = Product::orderBy('name', 'desc')->get();
-              $orderingDescription = 'Name Descending';
+              $orderingDescription = trans('messages.NameDescending');
               break;
           default:
               $viewData['products'] = Product::all();
@@ -43,7 +43,7 @@ class AdminProductController extends Controller
         }
 
         if ($orderingDescription) {
-            $viewData['title'] .= ' - Ordered by '.$orderingDescription;
+            $viewData['title'] .= ' - '.trans('messages.OrderedBy').' '.$orderingDescription;
         }
 
         return view('admin.product.index')->with('viewData', $viewData);
@@ -63,7 +63,7 @@ class AdminProductController extends Controller
     public function create(): View
     {
         $viewData = [];
-        $viewData['title'] = 'Create Product';
+        $viewData['title'] = trans('messages.createProduct');
 
         return view('admin.product.create')->with('viewData', $viewData);
     }
@@ -104,8 +104,12 @@ class AdminProductController extends Controller
 
     public function download(Request $request): StreamedResponse
     {
-      $type = $request->input('type', 'csv');
-      $formatter = app(DataFormatter::class,['format' => $type]);
-      return $formatter->download($request);
+        $validatedData = $request->validate([
+            'type' => 'required|in:csv,txt',
+        ]);
+    
+        $type = $validatedData['type'];
+        $formatter = app(DataFormatter::class, ['format' => $type]);
+        return $formatter->download($request);
     }
 }

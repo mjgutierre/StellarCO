@@ -79,5 +79,13 @@ return [
   'home' => 'Home',
   'statistic' => 'Statistics',
   'logout' => 'Logout',
+  'login' => 'Login',
+  'createProduct' => 'Create Product',
+  'QuantityAscending' => 'Quantity Ascending',
+  'QuantityDescending' => 'Quantity Descending',
+  'NameAscending' => 'Name Ascending',
+  'NameDescending' => 'Name Descending',
+  'OrderedBy' => 'Ordered by',
+  'download' => 'Download',
 ];
 

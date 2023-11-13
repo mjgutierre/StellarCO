@@ -23,8 +23,8 @@
       </div>
 
       <div>
-        <a href="{{ route('products.download', ['type' => 'csv']) }}" class="btn btn-primary">Download CSV</a>
-        <a href="{{ route('products.download', ['type' => 'txt']) }}" class="btn btn-primary">Download Txt</a>
+        <a href="{{ route('products.download', ['type' => 'csv']) }}" class="btn btn-primary">@lang('messages.download') CSV</a>
+        <a href="{{ route('products.download', ['type' => 'txt']) }}" class="btn btn-primary">@lang('messages.download') TXT</a>
       </div>
 
        @foreach ($viewData["products"] as $product)

@@ -30,7 +30,7 @@
                     </li>
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                     @guest
-                    <a class="nav-link active" href="{{ route('login') }}">Login</a>
+                    <a class="nav-link active" href="{{ route('login') }}">@lang('messages.login')</a>
                     <a class="nav-link active" href="{{ route('register') }}">@lang('messages.register')</a>
                     @else
                     <li class="nav-item">

@@ -79,4 +79,12 @@ return [
     'home' => 'Inicio', 
     'statistic' => 'Estadísticas',
     'logout' => 'Cerrar sesión',
+    'login' => 'Iniciar sesión',
+    'createProduct' => 'Crear Producto',
+    'QuantityAscending' => 'Cantidad Ascendente',
+    'QuantityDescending' => 'Cantidad Descendente',
+    'NameAscending' => 'Nombre Ascendente',
+    'NameDescending' => 'Nombre Descendente',
+    'OrderedBy' => 'Ordenado por',
+    'download' => 'Descargar',
 ];
