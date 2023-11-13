@@ -18,9 +18,9 @@ class ReviewController extends Controller
         Review::create([
             'title' => $request['title'],
             'description' => $request['description'],
-            'product_id' => $productId,
+            'product_id' => $product->getId(),
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', trans('messages.reviewSaved'));
     }
 }

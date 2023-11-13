@@ -17,13 +17,19 @@
                     </div>
                   </div>
                   <div>
-                  <h3>@lang('messages.Reviews')</h3>
-                  @foreach($viewData["product"]->getReviews() as $review) 
+                    <h3>@lang('messages.Reviews')</h3>
+                    @foreach($viewData["product"]->getReviews() as $review)
                       <div class="review">
-                          <p>@lang('messages.title'): {{ $review->getTitle() }}</p>
-                          <p>@lang('messages.description'): {{ $review->getDescription() }}</p><br/>
+                        <p>@lang('messages.title'): {{ $review->getTitle() }}</p>
+                        <p>@lang('messages.description'): {{ $review->getDescription() }}</p>
+                        <form method="POST" action="{{ route('admin.review.destroy', $review->getId()) }}">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="btn btn-danger">@lang('messages.delete')</button>
+                        </form>
+                        <br/>
                       </div>
-                  @endforeach
+                    @endforeach
                   </div>
                 </div>
                 <div class="col-md-5">

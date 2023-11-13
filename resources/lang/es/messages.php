@@ -90,4 +90,6 @@ return [
     'productUpdated' => 'Producto Actualizado',
     'productDeleted' => 'Producto Eliminado',
     'productCreated' => 'Producto Creado',
+    'reviewSaved' => 'Comentario Guardado',
+    'reviewDeleted' => 'Comentario Eliminado',
 ];

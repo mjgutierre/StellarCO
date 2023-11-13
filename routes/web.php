@@ -60,5 +60,7 @@ Route::get('/profile', 'App\Http\Controllers\ProfileController@index')->name('pr
     Route::put('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@update')->name('admin.product.update');
     //ADMIN-USERS
     Route::get('/admin/users', 'App\Http\Controllers\Admin\AdminUsersController@index')->name('admin.users.index');
+    //ADMIN-REVIEWS
+    Route::delete('/admin/reviews/{id}', 'App\Http\Controllers\Admin\AdminReviewController@destroy')->name('admin.review.destroy');
 // });
 Auth::routes();

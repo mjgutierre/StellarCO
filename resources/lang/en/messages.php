@@ -90,5 +90,7 @@ return [
   'productUpdated' => 'Product Updated',
   'productDeleted' => 'Product Deleted',
   'productCreated' => 'Product Created',
+  'reviewSaved' => 'Review Saved',
+  'reviewDeleted' => 'Review Deleted',
 ];
 
