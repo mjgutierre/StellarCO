@@ -40,7 +40,7 @@
                       <a class="nav-link" href="{{ route('profile.index') }}">@lang('messages.profile')</a>
                     </li>
                     <form id="logout" action="{{ route('logout') }}" method="POST">
-                        <a role="button" class="nav-link active" onclick="document.getElementById('logout').submit();">Logout</a>
+                        <a role="button" class="nav-link active" onclick="document.getElementById('logout').submit();">@lang('messages.logout')</a>
                         @csrf
                     </form>
 

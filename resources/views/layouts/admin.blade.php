@@ -18,32 +18,26 @@
                 <div class="position-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('admin.statistics.index') }}">Inicio</a>
+                            <a class="nav-link active" href="{{ route('admin.statistics.index') }}">@lang('messages.home')</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.product.index') }}">Productos</a>
+                            <a class="nav-link" href="{{ route('admin.product.index') }}">@lang('messages.Products')</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.product.create') }}">Crear</a>
-                        </li>
-                        @guest
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('login') }}">Login</a>
+                            <a class="nav-link" href="{{ route('admin.product.create') }}">@lang('messages.create')</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('register') }}">Register</a>
+                            <a class="nav-link" href="{{ route('admin.statistics.index') }}">@lang('messages.statistic')</a>
                         </li>
-                        @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.statistics.index') }}">Estadisticas</a>
+                          <a class="nav-link" href="{{ route('admin.users.index') }}">@lang('messages.users')</a>
                         </li>
                         <li class="nav-item">
                             <form id="logout" action="{{ route('logout') }}" method="POST">
-                                <a role="button" class="nav-link active" onclick="document.getElementById('logout').submit();">Logout</a>
+                                <a role="button" class="nav-link active" onclick="document.getElementById('logout').submit();">@lang('messages.logout')</a>
                                 @csrf
                             </form>
                         </li>
-                        @endguest
                     </ul>
                 </div>
             </nav>

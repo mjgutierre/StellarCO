@@ -36,8 +36,8 @@ Route::get('/orders', 'App\Http\Controllers\OrderController@index')->name('order
 //PROFILE
 Route::get('/profile', 'App\Http\Controllers\ProfileController@index')->name('profile.index');
 
-Route::middleware('admin')->group(function () {
-    //ADMIN
+// Route::middleware('admin')->group(function () {
+    //ADMIN-STATISTICS
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminStatisticsController@index')->name('admin.statistics.index');
     //ADMIN-PRODUCTS
     Route::get('/admin/products/', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.index');
@@ -48,7 +48,7 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@show')->name('admin.product.show');
     Route::delete('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@destroy')->name('admin.product.destroy');
     Route::put('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@update')->name('admin.product.update');
-    //ADMIN-STATISTICS
-    Route::get('/admin/statistics/user-list', 'App\Http\Controllers\Admin\AdminStatisticsController@users')->name('admin.statistics.users');
-});
+    //ADMIN-USERS
+    Route::get('/admin/users', 'App\Http\Controllers\Admin\AdminUsersController@index')->name('admin.users.index');
+// });
 Auth::routes();

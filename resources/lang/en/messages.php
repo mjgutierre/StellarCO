@@ -42,7 +42,7 @@ return [
   'WeHave' => 'We have',
   'rockets' => 'Rockets',
   'DollarsOnRockets' => 'dollars on rockets',
-  'ClientsUsuallyHave' => 'Clients usually have',
+  'ClientsUsuallyHave' => 'On average each of our listings has',
   'UsersOfTypeCustomer' => 'users of type Customer.',
   'title' => 'Title',
   'AddTitle' => 'Enter the title',
@@ -70,5 +70,14 @@ return [
   'SignInToBuy' => 'Sign in to buy',
   'PendingTrakingNum' => 'Pending tracking number',
   'profile' => 'Profile',
+  'adminStatistics' => 'Admin Statistics',
+  'users' => 'Users',
+  'create' => 'Create',
+  'list' => 'List',
+  'usersList' => 'Users List',
+  'role' => 'Role',
+  'home' => 'Home',
+  'statistic' => 'Statistics',
+  'logout' => 'Logout',
 ];
 
