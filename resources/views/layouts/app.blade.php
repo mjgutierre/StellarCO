@@ -25,6 +25,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('product.index') }}">@lang('messages.product')</a>
                     </li>
+
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ url('language/en') }}">En</a>
+                    <a class="nav-link" href="{{ url('language/es') }}">Es</a>
+                    </li>
+
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                     @guest
                     <a class="nav-link active" href="{{ route('login') }}">Login</a>
