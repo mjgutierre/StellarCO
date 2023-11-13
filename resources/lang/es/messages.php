@@ -92,4 +92,5 @@ return [
     'productCreated' => 'Producto Creado',
     'reviewSaved' => 'Comentario Guardado',
     'reviewDeleted' => 'Comentario Eliminado',
+    'langChanged' => 'Idioma Cambiado',
 ];

@@ -28,8 +28,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('cart.index') }}">@lang('messages.cart')</a>
                     </li>
-                    <a class="nav-link" href="{{ url('language/en') }}">En</a>
-                    <a class="nav-link" href="{{ url('language/es') }}">Es</a>
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                     @guest
                     <a class="nav-link active" href="{{ route('login') }}">@lang('messages.login')</a>
@@ -78,15 +76,19 @@
             </div>
         </div>
 
-        <!-- footer -->
         <div class="copyright py-3 text-center text-white full-width">
-            <div class="container">
-                <small>
-                    Copyright - <a class="text-reset fw-bold text-decoration-none" target="_blank" href="https://github.com/mjgutierre/StellarCO">
-                        StellarCO
-                    </a>
-                </small>
+          <div class="container">
+            <div class="d-flex justify-content-center mb-2">
+              <a class="nav-link d-inline-block mx-2" href="{{ url('language/en') }}">En</a>
+              <a class="nav-link d-inline-block mx-2" href="{{ url('language/es') }}">Es</a>
             </div>
+            <div>
+              <small>
+                Copyright - <a class="text-reset fw-bold text-decoration-none" target="_blank" 
+                               href="https://github.com/mjgutierre/StellarCO">StellarCO</a>
+              </small>
+            </div>
+          </div>
         </div>
 </body>
 
