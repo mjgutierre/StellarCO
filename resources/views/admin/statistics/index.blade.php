@@ -13,7 +13,7 @@
         <div class="four col-md-3">
             <div class="counter-box">
                 <i class="fa fa-group"></i>
-                <p>@lang('messages.WeHave') ${{$viewData['totalValueOfInventory']}} @lang('messages.DollarsOnRockets').</p>
+                <p>@lang('messages.WeHave') ${{ number_format($viewData['totalValueOfInventory'], 2) }} @lang('messages.DollarsOnRockets').</p>
             </div>
         </div>
         <div class="four col-md-3">

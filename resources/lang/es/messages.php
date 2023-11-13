@@ -87,4 +87,7 @@ return [
     'NameDescending' => 'Nombre Descendente',
     'OrderedBy' => 'Ordenado por',
     'download' => 'Descargar',
+    'productUpdated' => 'Producto Actualizado',
+    'productDeleted' => 'Producto Eliminado',
+    'productCreated' => 'Producto Creado',
 ];

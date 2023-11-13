@@ -53,7 +53,7 @@ class AdminProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $viewData = [
-            'title' => $product['name'],
+            'title' => $product->getName(),
             'product' => $product,
         ];
 
@@ -83,7 +83,7 @@ class AdminProductController extends Controller
             $newProduct->save();
         }
 
-        return redirect()->route('admin.product.index');
+        return redirect()->route('admin.product.index')->with('success', trans('messages.productCreated'));
     }
 
     public function destroy(int $id): RedirectResponse
@@ -91,7 +91,7 @@ class AdminProductController extends Controller
         Review::where('product_id', $id)->delete();
         Product::destroy($id);
 
-        return redirect()->route('admin.product.index');
+        return redirect()->route('admin.product.index')->with('success', trans('messages.productDeleted'));
     }
 
     public function update(Request $request, int $id): RedirectResponse
@@ -99,7 +99,7 @@ class AdminProductController extends Controller
         Product::validate($request);
         Product::findOrFail($id)->update($request->all());
 
-        return redirect()->route('admin.product.index');
+        return redirect()->route('admin.product.index')->with('success', trans('messages.productUpdated'));
     }
 
     public function download(Request $request): StreamedResponse

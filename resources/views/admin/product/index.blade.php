@@ -33,7 +33,7 @@
                <img src="{{ $product->getImage() }}" class="card-img-top" alt="{{ $product->getName() }}">
                <div class="card-body">
                <h5 class="card-title">{{ $product->getName() }}</h5>
-                   <p class="card-text">@lang('messages.price'): ${{ $product->getPrice() }}</p>
+                   <p class="card-text">@lang('messages.price'): ${{ number_format($product->getPrice(), 2) }}</p>
                   <p class="card-text">@lang('messages.quantity'): {{ $product->getQuantity() }}</p>
                   <p class="card-text">@lang('messages.location'): {{ $product->getLocation() }}</p>
                   <a href="{{ route('admin.product.show', ['id'=> $product->getId()]) }}" class="btn btn-primary">@lang('messages.LearnMore')</a>
