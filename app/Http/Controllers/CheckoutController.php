@@ -77,8 +77,9 @@ class CheckoutController extends Controller
           session()->forget('cart');
 
           $viewData = [
-            'title' => 'Purchase - Online Store"',
+            'title' => 'Purchase - Online Store',
           ];
+          
           return view('checkout.success')->with("viewData", $viewData);
       }else {
         return redirect()->route('cart.index')->with('error', 'No hay elemtos en el carrito');

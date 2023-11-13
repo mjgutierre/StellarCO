@@ -25,14 +25,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('product.index') }}">@lang('messages.product')</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('cart.index') }}">@lang('messages.cart')</a>
+                    </li>
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                     @guest
                     <a class="nav-link active" href="{{ route('login') }}">Login</a>
                     <a class="nav-link active" href="{{ route('register') }}">@lang('messages.register')</a>
                     @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('cart.index') }}">@lang('messages.cart')</a>
-                    </li>
                     <li class="nav-item">
                       <a class="nav-link" href="{{ route('order.index') }}">@lang('messages.orders')</a>
                     </li>
@@ -46,7 +46,7 @@
             </div>
         </div>
     </nav>
-    <div class="container h-100">
+    <div class="container">
         <div class="mt-5">
             @if($errors->any())
             <div class="col-12">
@@ -66,9 +66,10 @@
         </div>
 
         <div class="container my-5 content-container">
-            <div class="overlay"></div>
             <h2>@yield('title')</h2>
+            <div class="mt-5">
             @yield('content')
+            </div>
         </div>
 
         <!-- footer -->

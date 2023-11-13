@@ -67,5 +67,7 @@ return [
   'Status' => 'Status',
   'TrackingNumber' => 'Tracking number',
   'orders' => 'Orders',
+  'SignInToBuy' => 'Sign in to buy',
+  'PendingTrakingNum' => 'Pending tracking number',
 ];
 

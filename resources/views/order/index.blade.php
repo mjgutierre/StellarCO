@@ -8,9 +8,16 @@
         <div class="card mb-4 shadow-sm">
             <div class="card-body">
                 <h5 class="card-title">@lang('messages.Address'): {{ $order->getAddress() }}</h5>
-                <p class="card-text">@lang('messages.Total'): {{ $order->getTotal() }}</p>
+                <p class="card-text">@lang('messages.Total'): ${{ $order->getTotal() }}</p>
                 <p class="card-text">@lang('messages.Status'): {{ $order->getStatus() }}</p>
-                <p class="card-text">@lang('messages.TrackingNumber'): {{ $order->getTrackingNumber() }}</p>
+                <p class="card-text">
+                  @lang('messages.TrackingNumber'):
+                  @if ($order->getTrackingNumber() !== '')
+                      {{ $order->getTrackingNumber() }}
+                  @else
+                      <span class="badge rounded-pill bg-warning">@lang('messages.PendingTrakingNum')</span>
+                  @endif
+              </p>
             </div>
         </div>
     </div>

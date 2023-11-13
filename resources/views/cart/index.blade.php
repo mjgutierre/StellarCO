@@ -44,12 +44,17 @@
 
 @if ($viewData["products"])
 <div class="mt-4">
-    <div class="alert alert-info">
-        <h5>@lang('messages.AmountToPay'): ${{ $viewData["totalToPay"] }}</h5>
-        <a href="{{ route('checkout.index') }}">
-          <button type="submit" class="btn btn-sm btn-primary">@lang('messages.Buy')</button>
-        </a>
-    </div>
+  <div class="alert alert-info">
+      <h5>@lang('messages.AmountToPay'): ${{ $viewData["totalToPay"] }}</h5>
+      @auth
+          <a href="{{ route('checkout.index') }}">
+              <button type="submit" class="btn btn-sm btn-primary">@lang('messages.Buy')</button>
+          </a>
+      @endauth
+      @guest
+          <p>@lang('messages.SignInToBuy')</p>
+      @endguest
+  </div>
 </div>
 @endif
 @endsection
