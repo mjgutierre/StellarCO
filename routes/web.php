@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//LANG
+Route::get('/language/{locale}','App\Http\Controllers\LangController@change')->name('language.change');
+
 //PRODUCTS
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index');
 Route::get('/products', 'App\Http\Controllers\ProductController@index')->name('product.index');

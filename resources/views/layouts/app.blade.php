@@ -26,23 +26,26 @@
                         <a class="nav-link" href="{{ route('product.index') }}">@lang('messages.product')</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="{{ route('cart.index') }}">@lang('messages.cart')</a>
+                        <a class="nav-link" href="{{ route('cart.index') }}">@lang('messages.cart')</a>
                     </li>
+                    <a class="nav-link" href="{{ url('language/en') }}">En</a>
+                    <a class="nav-link" href="{{ url('language/es') }}">Es</a>
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                     @guest
                     <a class="nav-link active" href="{{ route('login') }}">@lang('messages.login')</a>
                     <a class="nav-link active" href="{{ route('register') }}">@lang('messages.register')</a>
                     @else
                     <li class="nav-item">
-                      <a class="nav-link" href="{{ route('order.index') }}">@lang('messages.orders')</a>
+                        <a class="nav-link" href="{{ route('order.index') }}">@lang('messages.orders')</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="{{ route('profile.index') }}">@lang('messages.profile')</a>
+                        <a class="nav-link" href="{{ route('profile.index') }}">@lang('messages.profile')</a>
                     </li>
                     <form id="logout" action="{{ route('logout') }}" method="POST">
                         <a role="button" class="nav-link active" onclick="document.getElementById('logout').submit();">@lang('messages.logout')</a>
                         @csrf
                     </form>
+
 
                     @endguest
                 </ul>
