@@ -14,7 +14,7 @@ class CartController extends Controller
         $cart = session()->get('cart', []);
 
         $viewData = [
-            'title' => 'Customize',
+            'title' => trans('messages.cart'),
             'totalToPay' => 0,
             'products' => [],
         ];
@@ -50,7 +50,7 @@ class CartController extends Controller
         }
         session()->put('cart', $cart);
 
-        return redirect()->back()->with('success', 'Producto añadido al carrito.');
+        return redirect()->back()->with('success', trans('messages.productAddedToCart'));
     }
 
     public function destroy($id): RedirectResponse
@@ -61,9 +61,9 @@ class CartController extends Controller
             unset($cart[$id]);
             session()->put('cart', $cart);
 
-            return redirect()->route('cart.index')->with('success', 'Elemento eliminado exitosamente.');
+            return redirect()->route('cart.index')->with('success',trans('messages.productRemovedFromCart'));
         } else {
-            return redirect()->route('cart.index')->with('error', 'Elemento no encontrado.');
+            return redirect()->route('cart.index')->with('error', trans('messages.productNotInCart'));
         }
     }
 }

@@ -94,4 +94,11 @@ return [
   'reviewDeleted' => 'Review Deleted',
   'langChanged' => 'Language Changed',
   'orders' => 'Orders',
+  'productAddedToCart' => 'Product added to cart',
+  'productRemovedFromCart' => 'Product removed from cart',
+  'productNotInCart' => 'Product not in cart',
+  'cart' => 'Cart',
+  'checkout' => 'Checkout',
+  'noProductsInCart' => 'No products in cart',
+  'purchaseSuccessful' => 'Purchase successful',
 ];

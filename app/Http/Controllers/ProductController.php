@@ -15,19 +15,19 @@ class ProductController extends Controller
         switch ($order) {
             case 'quantasc':
                 $viewData['products'] = Product::orderBy('quantity', 'asc')->get();
-                $orderingDescription = 'Quantity Ascending';
+                $orderingDescription = trans('messages.QuantityAscending');
                 break;
             case 'quantdesc':
                 $viewData['products'] = Product::orderBy('quantity', 'desc')->get();
-                $orderingDescription = 'Quantity Descending';
+                $orderingDescription = trans('messages.QuantityDescending');
                 break;
             case 'nameasc':
                 $viewData['products'] = Product::orderBy('name', 'asc')->get();
-                $orderingDescription = 'Name Ascending';
+                $orderingDescription = trans('messages.NameAscending');
                 break;
             case 'namedesc':
                 $viewData['products'] = Product::orderBy('name', 'desc')->get();
-                $orderingDescription = 'Name Descending';
+                $orderingDescription = trans('messages.NameDescending');
                 break;
             default:
                 $viewData['products'] = Product::all();
@@ -35,7 +35,7 @@ class ProductController extends Controller
         }
 
         if ($orderingDescription) {
-            $viewData['title'] .= ' - Ordered by '.$orderingDescription;
+            $viewData['title'] .= ' - '.trans('messages.OrderedBy').' '.$orderingDescription;
         }
 
         return view('product.index')->with('viewData', $viewData);

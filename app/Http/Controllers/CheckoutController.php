@@ -17,7 +17,7 @@ class CheckoutController extends Controller
         $cart = session()->get('cart', []);
 
         $viewData = [
-            'title' => 'Checkout',
+            'title' => trans('messages.checkout'),
             'total' => 0,
             'products' => [],
         ];
@@ -77,12 +77,12 @@ class CheckoutController extends Controller
             session()->forget('cart');
 
             $viewData = [
-                'title' => 'Purchase - Online Store',
+                'title' => trans('messages.purchaseSuccessful'),
             ];
 
             return view('checkout.success')->with('viewData', $viewData);
         } else {
-            return redirect()->route('cart.index')->with('error', 'No hay elemtos en el carrito');
+            return redirect()->route('cart.index')->with('error',trans('messages.noProductsInCart'));
         }
     }
 }
