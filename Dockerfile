@@ -12,7 +12,6 @@ RUN composer install \
     --no-scripts \
     --prefer-dist
 
-RUN composer update
 RUN php artisan key:generate
 RUN php artisan migrate --force
 RUN php artisan storage:link 
