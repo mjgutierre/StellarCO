@@ -3,12 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-
-use App\Models\Order;
-use App\Models\Product;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Item extends Model
 {
@@ -18,17 +14,17 @@ class Item extends Model
      * $this->attributes['price'] - string - contains the price of the item
      * $this->attributes['prompt'] - string - contains the propmt used by the LLM
      * $this->attributes['order_id'] - int - contains the referenced order id
-      * $this->attributes['product_id'] - int - contains the referenced product id
+     * $this->attributes['product_id'] - int - contains the referenced product id
      * this->attributes['created_at'] - string - contains the date of creation of the product
      * this->attributes['updated_at'] - string - contains the date of update of the product
      * $this->order - Order - contains the associated Order
      * $this->product - Product - contains the associated Product
-    */
+     */
     protected $fillable = [
         'price',
         'prompt',
         'product_id',
-        'order_id'
+        'order_id',
     ];
 
     //GETTERS

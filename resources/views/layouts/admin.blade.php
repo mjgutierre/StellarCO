@@ -62,7 +62,6 @@
                     </div>
                     <div class="container my-5 content-container">
                         <div class="overlay"></div>
-                        <h2>@yield('title')</h2>
                         @yield('content')
                     </div>
                 </div>

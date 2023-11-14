@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //LANG
-Route::get('/language/{locale}','App\Http\Controllers\LangController@change')->name('language.change');
+Route::get('/language/{locale}', 'App\Http\Controllers\LangController@change')->name('language.change');
 
 //PRODUCTS
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index');
@@ -31,7 +31,7 @@ Route::post('/cart', 'App\Http\Controllers\CartController@store')->name('cart.st
 Route::delete('/cart/{id}', 'App\Http\Controllers\CartController@destroy')->name('cart.destroy');
 
 //CUSTOMIZATION
-Route::post('/customization/generate','App\Http\Controllers\CustomizationController@generate')->name('customization.generate');
+Route::post('/customization/generate', 'App\Http\Controllers\CustomizationController@generate')->name('customization.generate');
 Route::get('/customization/{id}', 'App\Http\Controllers\CustomizationController@index')->name('customization.index');
 
 //CHECKOUT
@@ -46,20 +46,20 @@ Route::get('/profile', 'App\Http\Controllers\ProfileController@index')->name('pr
 
 //ADMIN
 // Route::middleware('admin')->group(function () {
-    //ADMIN-STATISTICS
-    Route::get('/admin', 'App\Http\Controllers\Admin\AdminStatisticsController@index')->name('admin.statistics.index');
-    //ADMIN-PRODUCTS
-    Route::get('/admin/products/', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.index');
-    Route::get('/products-download', 'App\Http\Controllers\Admin\AdminProductController@download')->name('products.download');
-    Route::get('/admin/products/ordered/{order}', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.ordered');
-    Route::post('/admin/products/save', 'App\Http\Controllers\Admin\AdminProductController@save')->name('admin.product.save');
-    Route::get('/admin/products/create', 'App\Http\Controllers\Admin\AdminProductController@create')->name('admin.product.create');
-    Route::get('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@show')->name('admin.product.show');
-    Route::delete('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@destroy')->name('admin.product.destroy');
-    Route::put('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@update')->name('admin.product.update');
-    //ADMIN-USERS
-    Route::get('/admin/users', 'App\Http\Controllers\Admin\AdminUsersController@index')->name('admin.users.index');
-    //ADMIN-REVIEWS
-    Route::delete('/admin/reviews/{id}', 'App\Http\Controllers\Admin\AdminReviewController@destroy')->name('admin.review.destroy');
+//ADMIN-STATISTICS
+Route::get('/admin', 'App\Http\Controllers\Admin\AdminStatisticsController@index')->name('admin.statistics.index');
+//ADMIN-PRODUCTS
+Route::get('/admin/products/', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.index');
+Route::get('/products-download', 'App\Http\Controllers\Admin\AdminProductController@download')->name('products.download');
+Route::get('/admin/products/ordered/{order}', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.ordered');
+Route::post('/admin/products/save', 'App\Http\Controllers\Admin\AdminProductController@save')->name('admin.product.save');
+Route::get('/admin/products/create', 'App\Http\Controllers\Admin\AdminProductController@create')->name('admin.product.create');
+Route::get('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@show')->name('admin.product.show');
+Route::delete('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@destroy')->name('admin.product.destroy');
+Route::put('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@update')->name('admin.product.update');
+//ADMIN-USERS
+Route::get('/admin/users', 'App\Http\Controllers\Admin\AdminUsersController@index')->name('admin.users.index');
+//ADMIN-REVIEWS
+Route::delete('/admin/reviews/{id}', 'App\Http\Controllers\Admin\AdminReviewController@destroy')->name('admin.review.destroy');
 // });
 Auth::routes();

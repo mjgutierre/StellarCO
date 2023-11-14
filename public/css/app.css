@@ -47,9 +47,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Para centrar horizontalmente */
     justify-content: center;
-    /* Para centrar verticalmente */
 }
 
 
@@ -119,8 +117,9 @@ header {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    margin-bottom: 20px;
     position: relative;
+    margin: 0.5rem;
+    margin-bottom: 60px;
 }
 
 .card:hover {
@@ -137,6 +136,10 @@ header {
     text-align: left;
 }
 
+.card-link:hover {
+    color: #FFC62D;
+}
+
 .card-title {
     font-size: 1.25rem;
     font-weight: bold;
@@ -150,7 +153,6 @@ header {
 
 .btn {
     text-align: center;
-    /* Alineación horizontal al centro */
     margin-top: 5px;
     border: none;
 }
@@ -282,9 +284,6 @@ header {
     gap: 10px;
 }
 
-/* analitycs  */
-.containerstatistics {
-}
 
 /* CSS */
 .counter-box {
@@ -356,14 +355,6 @@ header {
     font-size: 11px;
 }
 
-/* ORDER */
-/* {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center
-}body */
-
 .modal-body {
     background-color: #fff;
     border-color: #fff;
@@ -402,7 +393,7 @@ hr.new1 {
     z-index: 1;
     padding-top: 20px;
     transition: 0.3s;
-    background-color: #143253 !important; 
+    background-color: #143253 !important;
 }
 
 #sidebar.active {
@@ -417,44 +408,99 @@ hr.new1 {
 
 #sidebar .nav-link {
     padding: 10px 15px;
-    color: #ffffff; 
-    transition: 0.3s; 
+    color: #ffffff;
+    transition: 0.3s;
 }
 
 #sidebar .nav-link:hover {
-    background-color: #4e6680; 
-    color: #ffffff; 
+    background-color: #4e6680;
+    color: #ffffff;
 }
 
-.product-buttons {
-    /* Este estilo se aplicará al contenedor de los botones */
+
+.review-card {
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin-bottom: 20px;
+    margin-right: 10px;
 }
 
-.product-buttons a {
-    margin-right: 150px; 
-    font-size: 18px;  
-    padding: 10px 20px;
+.review-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.user-container {
-    padding: 15px; /* Relleno interno */
-    background-color: #143253; 
-    border-radius: 20px;
-    color: #ffffff; 
-
+.leave-comment-section {
+    background: rgba(221, 221, 221, 0.37);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-bottom: 70px;
 }
 
-.user-item {
-    margin-bottom: 10px;
+.leave-comment-section h3 {
+    color: #333;
+    /* Color oscuro para el título */
+    margin-bottom: 15px;
 }
 
-.user-item p {
-    margin: 0;
+.leave-comment-section form {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.leave-comment-section label {
     font-weight: bold;
-    color: #ffffff; 
-}
-.user-container .user-item:nth-child(n+4) {
-    display: none;
+    color: #555;
 }
 
+.leave-comment-section input[type="text"],
+.leave-comment-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
 
+.leave-comment-section input[type="text"]:focus,
+.leave-comment-section textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* filtros */
+.filters-dropdown select {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    background-color: white;
+    font-size: 1rem;
+    color: #495057;
+    appearance: none; 
+    margin-bottom: 30px;
+  }
+  
+  .filters-dropdown select:hover {
+    border-color: #80bdff;
+    outline: none;
+  }
+  
+  .filters-dropdown select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .filters-dropdown option:checked {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Media query para dispositivos móviles */
+  @media (max-width: 576px) {
+    .filters-dropdown select {
+      width: 100%;
+    }
+  }

@@ -2,39 +2,40 @@
 
 namespace App\Utils;
 
-use Illuminate\Http\Request;
 use App\interfaces\Dataformatter;
 use App\Models\Product;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class CSVformatter implements Dataformatter
 {
-    public function download(Request $request): StreamedResponse {
-      $products = Product::latest()->take(10)->get();
+    public function download(Request $request): StreamedResponse
+    {
+        $products = Product::latest()->take(10)->get();
 
-      $filename = "products_" . date('Ymd') . ".csv";
+        $filename = 'products_'.date('Ymd').'.csv';
 
-      $headers = [
-          "Content-type" => "text/csv",
-          "Content-Disposition" => "attachment; filename={$filename}",
-          "Pragma" => "no-cache",
-          "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
-          "Expires" => "0"
-      ];
+        $headers = [
+            'Content-type' => 'text/csv',
+            'Content-Disposition' => "attachment; filename={$filename}",
+            'Pragma' => 'no-cache',
+            'Cache-Control' => 'must-revalidate, post-check=0, pre-check=0',
+            'Expires' => '0',
+        ];
 
-      $callback = function() use ($products) {
-          $file = fopen('php://output', 'w');
+        $callback = function () use ($products) {
+            $file = fopen('php://output', 'w');
 
-          fputcsv($file, ['ID', 'Name', 'Description', 'Price', 'Created At']);
+            fputcsv($file, ['ID', 'Name', 'Description', 'Price', 'Created At']);
 
-          foreach ($products as $product) {
-              fputcsv($file, [$product->id, $product->name, $product->description, $product->price, $product->created_at]);
-          }
+            foreach ($products as $product) {
+                fputcsv($file, [$product->id, $product->name, $product->description, $product->price, $product->created_at]);
+            }
 
-          fclose($file);
-      };
+            fclose($file);
+        };
 
-      return Response::stream($callback, 200, $headers);
+        return Response::stream($callback, 200, $headers);
     }
 }

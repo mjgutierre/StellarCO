@@ -76,7 +76,7 @@ return [
     'list' => 'Listar',
     'usersList' => 'Lista de usuarios',
     'role' => 'Rol',
-    'home' => 'Inicio', 
+    'home' => 'Inicio',
     'statistic' => 'Estadísticas',
     'logout' => 'Cerrar sesión',
     'login' => 'Iniciar sesión',

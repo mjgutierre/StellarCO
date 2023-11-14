@@ -2,38 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Auth;
-use App\Models\Product;
-use App\Models\Order;
-use App\Models\Item;
 
 class CartController extends Controller
 {
-    public function index(): View 
+    public function index(): View
     {
         $cart = session()->get('cart', []);
-    
+
         $viewData = [
-          'title' => 'Customize',
-          'totalToPay' => 0,
-          'products' => []
+            'title' => 'Customize',
+            'totalToPay' => 0,
+            'products' => [],
         ];
 
         foreach ($cart as $itemDetails) {
-          $product = Product::find($itemDetails['product_id']);
-          if ($product) {
-              $product->quantity = $itemDetails['quantity'];  
-              $viewData['products'][] = $product;
-              $viewData['totalToPay'] += $product->getPrice() * $itemDetails['quantity'];
-          }
+            $product = Product::find($itemDetails['product_id']);
+            if ($product) {
+                $product->quantity = $itemDetails['quantity'];
+                $viewData['products'][] = $product;
+                $viewData['totalToPay'] += $product->getPrice() * $itemDetails['quantity'];
+            }
         }
-    
+
         return view('cart.index')->with('viewData', $viewData);
     }
-  
+
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
@@ -48,7 +45,7 @@ class CartController extends Controller
                 'product_id' => $request->product_id,
                 'quantity' => 1,
                 'generatedImageiUrl' => '',
-                'prompt' => ''
+                'prompt' => '',
             ];
         }
         session()->put('cart', $cart);

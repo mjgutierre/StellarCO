@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Product;
 use App\Interfaces\DataFormatter;
+use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
-use Illuminate\Support\Facades\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class AdminProductController extends Controller
@@ -18,27 +17,27 @@ class AdminProductController extends Controller
     {
         $viewData = [];
         $viewData['title'] = trans('messages.Products');
-        
+
         switch ($order) {
-          case 'quantasc':
-              $viewData['products'] = Product::orderBy('quantity', 'asc')->get();
-              $orderingDescription = trans('messages.QuantityAscending');
-              break;
-          case 'quantdesc':
-              $viewData['products'] = Product::orderBy('quantity', 'desc')->get();
-              $orderingDescription = trans('messages.QuantityDescending');
-              break;
-          case 'nameasc':
-              $viewData['products'] = Product::orderBy('name', 'asc')->get();
-              $orderingDescription = trans('messages.NameAscending');
-              break;
-          case 'namedesc':
-              $viewData['products'] = Product::orderBy('name', 'desc')->get();
-              $orderingDescription = trans('messages.NameDescending');
-              break;
-          default:
-              $viewData['products'] = Product::all();
-              $orderingDescription = '';
+            case 'quantasc':
+                $viewData['products'] = Product::orderBy('quantity', 'asc')->get();
+                $orderingDescription = trans('messages.QuantityAscending');
+                break;
+            case 'quantdesc':
+                $viewData['products'] = Product::orderBy('quantity', 'desc')->get();
+                $orderingDescription = trans('messages.QuantityDescending');
+                break;
+            case 'nameasc':
+                $viewData['products'] = Product::orderBy('name', 'asc')->get();
+                $orderingDescription = trans('messages.NameAscending');
+                break;
+            case 'namedesc':
+                $viewData['products'] = Product::orderBy('name', 'desc')->get();
+                $orderingDescription = trans('messages.NameDescending');
+                break;
+            default:
+                $viewData['products'] = Product::all();
+                $orderingDescription = '';
         }
 
         if ($orderingDescription) {
@@ -87,11 +86,11 @@ class AdminProductController extends Controller
 
     public function destroy(int $id): RedirectResponse
     {
-      $product = Product::findOrFail($id);
-      $product->reviews()->delete();
-      $product->delete();
+        $product = Product::findOrFail($id);
+        $product->reviews()->delete();
+        $product->delete();
 
-      return redirect()->route('admin.product.index')->with('success', trans('messages.productDeleted'));
+        return redirect()->route('admin.product.index')->with('success', trans('messages.productDeleted'));
     }
 
     public function update(Request $request, int $id): RedirectResponse
@@ -107,9 +106,10 @@ class AdminProductController extends Controller
         $validatedData = $request->validate([
             'type' => 'required|in:csv,txt',
         ]);
-    
+
         $type = $validatedData['type'];
         $formatter = app(DataFormatter::class, ['format' => $type]);
+
         return $formatter->download($request);
     }
 }

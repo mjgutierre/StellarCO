@@ -70,7 +70,6 @@
         </div>
 
         <div class="container my-5 content-container">
-            <h2>@yield('title')</h2>
             <div class="mt-5">
             @yield('content')
             </div>

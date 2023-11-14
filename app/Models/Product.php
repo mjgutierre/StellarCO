@@ -2,17 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-
 use Illuminate\Http\Request;
-use App\Models\Review;
 
 class Product extends Model
 {
     use HasFactory;
+
     /**
      * PRODUCT ATTRIBUTES
      * $this->attributes['id'] - int - contains the product primary key (id)
@@ -134,12 +133,12 @@ class Product extends Model
     public static function validate(Request $request): void
     {
         $request->validate([
-          'name' => 'required|max:255',
-          'description' => 'required',
-          'price' => 'required|numeric|gt:0',
-          'quantity' => 'required|numeric|gt:0',
-          'location' => 'required|max:255',
-          'image' => 'file|image|mimes:png|max:4096',
+            'name' => 'required|max:255',
+            'description' => 'required',
+            'price' => 'required|numeric|gt:0',
+            'quantity' => 'required|numeric|gt:0',
+            'location' => 'required|max:255',
+            'image' => 'file|image|mimes:png|max:4096',
         ]);
     }
 }
