@@ -93,4 +93,5 @@ return [
     'reviewSaved' => 'Comentario Guardado',
     'reviewDeleted' => 'Comentario Eliminado',
     'langChanged' => 'Idioma Cambiado',
+    'orders' => 'Ordenes',
 ];

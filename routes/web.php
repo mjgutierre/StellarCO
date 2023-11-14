@@ -61,5 +61,7 @@ Route::put('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductContr
 Route::get('/admin/users', 'App\Http\Controllers\Admin\AdminUsersController@index')->name('admin.users.index');
 //ADMIN-REVIEWS
 Route::delete('/admin/reviews/{id}', 'App\Http\Controllers\Admin\AdminReviewController@destroy')->name('admin.review.destroy');
+    //ADMIN-ORDERS
+    Route::get('/admin/orders', 'App\Http\Controllers\Admin\AdminOrderController@index')->name('admin.orders.index');
 // });
 Auth::routes();
