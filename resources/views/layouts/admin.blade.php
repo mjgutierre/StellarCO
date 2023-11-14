@@ -44,6 +44,12 @@
                         </li>
                     </ul>
                 </div>
+                <div class="mt-auto p-3 w-100">
+                    <div class="nav-item text-center w-100">
+                        <a class="nav-link d-inline mx-2" href="{{ url('language/en') }}">En</a>
+                        <a class="nav-link d-inline mx-2" href="{{ url('language/es') }}">Es</a>
+                    </div>
+                </div>
             </nav>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="container">
