@@ -93,5 +93,6 @@ return [
   'reviewSaved' => 'Review Saved',
   'reviewDeleted' => 'Review Deleted',
   'langChanged' => 'Language Changed',
+  'orders' => 'Orders',
 ];
 
