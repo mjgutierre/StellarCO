@@ -11,13 +11,12 @@
 </div>
 @endif
 
-
 @section('content')
 <div class="shopping-cart">
     <div class="row">
+        <h2>Carrito</h2>
         @forelse ($viewData["products"] as $product)
-        <h2>Checkout</h2>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
                 <div class="card-body">
                     <h5 class="card-title">@lang('messages.Name'): {{ $product->getName() }}</h5>

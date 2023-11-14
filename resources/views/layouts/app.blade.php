@@ -32,14 +32,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('order.index') }}">@lang('messages.orders')</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('profile.index') }}">@lang('messages.profile')</a>
-                    </li>
+
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                     @guest
                     <a class="nav-link active" href="{{ route('login') }}">@lang('messages.login')</a>
                     <a class="nav-link active" href="{{ route('register') }}">@lang('messages.register')</a>
                     @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('profile.index') }}">@lang('messages.profile')</a>
+                    </li>
                     <form id="logout" action="{{ route('logout') }}" method="POST">
                         <a role="button" class="nav-link active" onclick="document.getElementById('logout').submit();">@lang('messages.logout')</a>
                         @csrf
@@ -70,23 +71,22 @@
 
         <div class="container my-5 content-container">
             <div class="mt-5">
-            @yield('content')
+                @yield('content')
             </div>
         </div>
 
         <div class="copyright py-3 text-center text-white full-width">
-          <div class="container">
-            <div class="d-flex justify-content-center mb-2">
-              <a class="nav-link d-inline-block mx-2" href="{{ url('language/en') }}">En</a>
-              <a class="nav-link d-inline-block mx-2" href="{{ url('language/es') }}">Es</a>
+            <div class="container">
+                <div class="d-flex justify-content-center mb-2">
+                    <a class="nav-link d-inline-block mx-2" href="{{ url('language/en') }}">En</a>
+                    <a class="nav-link d-inline-block mx-2" href="{{ url('language/es') }}">Es</a>
+                </div>
+                <div>
+                    <small>
+                        Copyright - <a class="text-reset fw-bold text-decoration-none" target="_blank" href="https://github.com/mjgutierre/StellarCO">StellarCO</a>
+                    </small>
+                </div>
             </div>
-            <div>
-              <small>
-                Copyright - <a class="text-reset fw-bold text-decoration-none" target="_blank" 
-                               href="https://github.com/mjgutierre/StellarCO">StellarCO</a>
-              </small>
-            </div>
-          </div>
         </div>
 </body>
 

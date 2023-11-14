@@ -51,31 +51,5 @@
         </div>
     </div>
 
-    @empty
-    <div class="col-12">
-        <p class="text-center text-muted">@lang('messages.NoElementsInCart')</p>
-    </div>
-    @endforelse
-
-    <div class="col-12 mt-4">
-        <h4>@lang('messages.orderSummary')</h4>
-        <ul>
-            @foreach ($viewData["products"] as $product)
-            <li>{{ $product->getName() }} - ${{ $product->getPrice() }} x {{ $product->quantity }} = ${{ $product->getPrice() * $product->quantity }}</li>
-            @endforeach
-        </ul>
-        <p><strong>@lang('messages.totalAmount'):</strong> ${{ $viewData['total'] }}</p>
-    </div>
-
-    <div class="col-12 mt-4">
-        <form action="{{ route('checkout.confirm') }}" method="post">
-            @csrf
-            <div class="form-group">
-                <label for="address">@lang('messages.Address')</label>
-                <input type="text" class="form-control" id="address" name="address" required>
-            </div>
-            <button type="submit" class="btn btn-primary">@lang('messages.confirmBuy')</button>
-        </form>
-    </div>
-</div>
+   
 @endsection
