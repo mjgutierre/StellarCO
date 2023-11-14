@@ -44,22 +44,25 @@ Route::get('/orders', 'App\Http\Controllers\OrderController@index')->name('order
 //PROFILE
 Route::get('/profile', 'App\Http\Controllers\ProfileController@index')->name('profile.index');
 
-//ADMIN-STATISTICS
-Route::get('/admin', 'App\Http\Controllers\Admin\AdminStatisticsController@index')->name('admin.statistics.index');
-//ADMIN-PRODUCTS
-Route::get('/admin/products/', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.index');
-Route::get('/products-download', 'App\Http\Controllers\Admin\AdminProductController@download')->name('products.download');
-Route::get('/admin/products/ordered/{order}', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.ordered');
-Route::post('/admin/products/save', 'App\Http\Controllers\Admin\AdminProductController@save')->name('admin.product.save');
-Route::get('/admin/products/create', 'App\Http\Controllers\Admin\AdminProductController@create')->name('admin.product.create');
-Route::get('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@show')->name('admin.product.show');
-Route::delete('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@destroy')->name('admin.product.destroy');
-Route::put('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@update')->name('admin.product.update');
-//ADMIN-USERS
-Route::get('/admin/users', 'App\Http\Controllers\Admin\AdminUsersController@index')->name('admin.users.index');
-//ADMIN-REVIEWS
-Route::delete('/admin/reviews/{id}', 'App\Http\Controllers\Admin\AdminReviewController@destroy')->name('admin.review.destroy');
-//ADMIN-ORDERS
-Route::get('/admin/orders', 'App\Http\Controllers\Admin\AdminOrderController@index')->name('admin.orders.index');
-// });
+Route::middleware('admin')->group(function () {
+  //ADMIN-STATISTICS
+  Route::get('/admin', 'App\Http\Controllers\Admin\AdminStatisticsController@index')->name('admin.statistics.index');
+  //ADMIN-PRODUCTS
+  Route::get('/admin/products/', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.index');
+  Route::get('/products-download', 'App\Http\Controllers\Admin\AdminProductController@download')->name('products.download');
+  Route::get('/admin/products/ordered/{order}', 'App\Http\Controllers\Admin\AdminProductController@index')->name('admin.product.ordered');
+  Route::post('/admin/products/save', 'App\Http\Controllers\Admin\AdminProductController@save')->name('admin.product.save');
+  Route::get('/admin/products/create', 'App\Http\Controllers\Admin\AdminProductController@create')->name('admin.product.create');
+  Route::get('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@show')->name('admin.product.show');
+  Route::delete('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@destroy')->name('admin.product.destroy');
+  Route::put('/admin/products/{id}', 'App\Http\Controllers\Admin\AdminProductController@update')->name('admin.product.update');
+  //ADMIN-USERS
+  Route::get('/admin/users', 'App\Http\Controllers\Admin\AdminUsersController@index')->name('admin.users.index');
+  //ADMIN-REVIEWS
+  Route::delete('/admin/reviews/{id}', 'App\Http\Controllers\Admin\AdminReviewController@destroy')->name('admin.review.destroy');
+  //ADMIN-ORDERS
+  Route::get('/admin/orders', 'App\Http\Controllers\Admin\AdminOrderController@index')->name('admin.orders.index');
+  //ADMIN-COMPETITOR-MONITOR
+  Route::get('/admin/competitor-monitor', 'App\Http\Controllers\Admin\AdminCompetitorMonitorController@index')->name('admin.competitorMonitor.index');
+});
 Auth::routes();

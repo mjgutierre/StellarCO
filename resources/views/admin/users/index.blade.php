@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <h2 class="text-center mb-5">Lista de Usuarios</h2>
+    <h2 class="text-center mb-5">@lang('messages.userList')</h2>
     <div class="row">
         @foreach ($viewData["users"] as $user)
         <div class="col-md-4 mb-4">

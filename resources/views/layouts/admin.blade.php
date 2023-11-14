@@ -37,6 +37,9 @@
                           <a class="nav-link" href="{{ route('admin.orders.index') }}">@lang('messages.orders')</a>
                         </li>
                         <li class="nav-item">
+                          <a class="nav-link" href="{{ route('admin.competitorMonitor.index') }}">@lang('messages.competitorMonitor')</a>
+                        </li>
+                        <li class="nav-item">
                             <form id="logout" action="{{ route('logout') }}" method="POST">
                                 <a role="button" class="nav-link active" onclick="document.getElementById('logout').submit();">@lang('messages.logout')</a>
                                 @csrf

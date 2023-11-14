@@ -100,5 +100,9 @@ return [
     'newProducts' => 'Nuevos Productos',
     'confirmBuy' => 'Confirmar Compra',
     'totalAmount' => 'Cantidad total',
-    'orderSummary' => 'Resumen de la Orden'
+    'orderSummary' => 'Resumen de la Orden',
+    'competitorMonitor' => 'Monitor de Competidores',
+    'userList' => 'Lista de Usuarios',
+    'createNewProduct' => 'Crear Nuevo Producto',
+    'errorOnApi' => 'Error en la API',
 ];

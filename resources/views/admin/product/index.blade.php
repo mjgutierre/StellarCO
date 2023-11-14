@@ -17,9 +17,9 @@
             <div class="row">
                 <div class="col">
                     <div class="download-container d-flex align-items-center justify-content-start p-3">
-                        <h5 class="mr-3 texto-h5">Descargar Datos</h5>
-                        <a href="{{ route('products.download', ['type' => 'csv']) }}" class="btn btn-warning mr-2">Descargar CSV</a>
-                        <a href="{{ route('products.download', ['type' => 'txt']) }}" class="btn btn-warning">Descargar TXT</a>
+                        <h5 class="mr-3 texto-h5">@lang('messages.download')</h5>
+                        <a href="{{ route('products.download', ['type' => 'csv']) }}" class="btn btn-warning mr-2">@lang('messages.download') CSV</a>
+                        <a href="{{ route('products.download', ['type' => 'txt']) }}" class="btn btn-warning">@lang('messages.download') TXT</a>
                     </div>
                 </div>
             </div>
