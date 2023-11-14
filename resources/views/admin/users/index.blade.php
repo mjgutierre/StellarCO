@@ -14,9 +14,11 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text"><strong>@lang('messages.mail'):</strong> {{ Str::limit($user->getEmail() , 30)}}</p>
-                    <p class="card-text"><strong>@lang('messages.UserCreated'):</strong>  {{ $user->getCreatedAt() }}</p>
+                    <p class="card-text"><strong>@lang('messages.UserCreated'):</strong> {{ $user->getCreatedAt() }}</p>
                     <p class="card-text"><strong>@lang('messages.AccountBalance'):</strong> ${{ number_format($user->getBalance(), 2) }}</p>
-                    <p class="card-text"><span class="badge rounded-pill bg-success">@lang('messages.role'): {{ $user->getRole() }}</span></p>
+                    <p class="card-text"><span class="badge rounded-pill {{ $user->getRole() == 'admin' ? 'bg-success' : 'bg-warning' }}">
+                        @lang('messages.role'): {{ $user->getRole() }}</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -24,4 +26,3 @@
     </div>
 </div>
 @endsection
-
