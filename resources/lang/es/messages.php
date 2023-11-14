@@ -94,4 +94,13 @@ return [
     'reviewDeleted' => 'Comentario Eliminado',
     'langChanged' => 'Idioma Cambiado',
     'orders' => 'Ordenes',
+    'productAddedToCart' => 'Producto agregado al carrito',
+    'productRemovedFromCart' => 'Producto eliminado del carrito',
+    'productNotInCart' => 'Producto no en el carrito',
+    'cart' => 'Carrito',
+    'checkout' => 'Checkout',
+    'noProductsInCart' => 'No hay productos en el carrito',
+    'purchaseSuccessful' => 'Compra exitosa',
+    'noOrders' => 'No hay ordenes',
+    'newProducts' => 'Nuevos Productos',
 ];
