@@ -2,7 +2,7 @@
 @section('title', $viewData['title'])
 @section('content')
 <div class="container">
-    <h2>Crear Nuevo Producto</h2>
+    <h2>@lang('messages.createNewProduct')</h2>
     <div class="row justify-content-center align-items-center mt-5">
         <div class="col-md-5">
             <div class="card custom-card create">
