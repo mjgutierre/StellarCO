@@ -45,7 +45,7 @@
             <div class="user-container">
                 <h3>@lang('messages.users')</h3>
                 @foreach($viewData['usersPreview'] as $user)
-                    <p class="user-item">{{ $user->getId() }} - {{ $user->getName() }}/ {{ $user->getEmail() }}</p>
+                    <p class="user-item">User Id: {{ $user->getId() }} - {{ $user->getName() }}/ {{ $user->getEmail() }}</p>
                 @endforeach
                 <div>
                     <div class="filters breadcrumbs analytics">
