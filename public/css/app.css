@@ -734,3 +734,60 @@ hr.new1 {
 .user-card .badge {
     font-size: 0.8em;
 }
+
+/* Estilos específicos para el perfil de usuario */
+.user-profile-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.user-profile-card {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+.user-profile-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.user-profile-info {
+    margin-top: 10px;
+}
+
+.user-profile-item {
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user-profile-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.user-profile-value {
+    font-size: 17px;
+    color: #555;
+    margin-left: 20px;
+}
+
+.user-profile-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eaeaea; 
+    padding: 15px 20px; 
+}
+
+.user-profile-title {
+    margin: 0; 
+    font-size: 1.5rem; 
+    color: #333; 
+    text-align: center; 
+}
+
+.user-profile-body {
+    padding: 50px;
+    width: 400px;
+} 
+
