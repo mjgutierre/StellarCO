@@ -13,7 +13,6 @@
         <option value="{{ route('product.ordered', ['order' => 'namedesc']) }}">@lang('messages.NameZz-Aa')</option>
       </select>
     </div>
-
     <h2>@lang('messages.product')</h2>
     @foreach ($viewData["products"] as $product)
     <div class="card">

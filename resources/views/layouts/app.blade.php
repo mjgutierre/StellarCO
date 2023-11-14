@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+Jnujsl5+z0I5t9z5l5Ff5r5l5Ff5r5l5Ff5r5l5Ff5r5l5Ff" crossorigin="anonymous">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>@yield('title', 'StellarCO')</title>
 </head>
 
@@ -28,23 +29,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('cart.index') }}">@lang('messages.cart')</a>
                     </li>
-                    <div class="vr bg-white mx-2 d-none d-lg-block"></div>
-                    @guest
-                    <a class="nav-link active" href="{{ route('login') }}">@lang('messages.login')</a>
-                    <a class="nav-link active" href="{{ route('register') }}">@lang('messages.register')</a>
-                    @else
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('order.index') }}">@lang('messages.orders')</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('profile.index') }}">@lang('messages.profile')</a>
                     </li>
+                    <div class="vr bg-white mx-2 d-none d-lg-block"></div>
+                    @guest
+                    <a class="nav-link active" href="{{ route('login') }}">@lang('messages.login')</a>
+                    <a class="nav-link active" href="{{ route('register') }}">@lang('messages.register')</a>
+                    @else
                     <form id="logout" action="{{ route('logout') }}" method="POST">
                         <a role="button" class="nav-link active" onclick="document.getElementById('logout').submit();">@lang('messages.logout')</a>
                         @csrf
                     </form>
-
-
                     @endguest
                 </ul>
             </div>
