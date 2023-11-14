@@ -10,6 +10,10 @@ header {
     margin-top: 80px;
 }
 
+h2 {
+    margin-top: 30px;
+}
+
 .carousel-item {
     height: 65vh;
     min-height: 350px;
@@ -267,7 +271,7 @@ header {
 }
 
 .create {
-    margin-top: 50px;
+    margin-top: 5px;
 }
 
 .btn {
@@ -291,15 +295,15 @@ header {
     gap: 10px;
 }
 
-
-/* CSS */
 .counter-box {
     display: block;
     background: #f6f6f6;
     padding: 40px 20px 37px;
     text-align: center;
-    min-height: 200px;
+    height: 230px;
+    width: 250px;
 }
+
 
 .counter-box p {
     margin: 5px 0 0;
@@ -680,4 +684,51 @@ hr.new1 {
     font-weight: 500;
     color: #000;
     margin-top: 70px;
+}
+
+.indexproducts h2 {
+    font-weight: 500;
+    color: #000;
+    margin-top: 25px;
+}
+
+.download-container {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.download-container .btn-warning {
+    margin-right: 20px;
+    text-align: center;
+    border: none;
+    margin-top: -2px;
+    background-color: #FFC62D;
+    color: #143253;
+    font-weight: bold;
+}
+
+.download-container .btn-warning:hover {
+    background-color: #FFD460;
+
+}
+
+.download-container .texto-h5 {
+    margin-right: 20px;
+}
+
+/* users */
+.user-card {
+    box-shadow: 0 0.46875rem 2.1875rem rgb(4 9 20 / 3%), 0 0.9375rem 1.40625rem rgb(4 9 20 / 3%), 0 0.25rem 0.53125rem rgb(4 9 20 / 5%), 0 0.125rem 0.1875rem rgb(4 9 20 / 3%);
+    border-radius: 0.375rem;
+    width: 350px;
+    height: 200px;
+}
+
+.user-card .card-header {
+    background-color: #f8f9fa;
+    border-bottom: none;
+}
+
+.user-card .badge {
+    font-size: 0.8em;
 }

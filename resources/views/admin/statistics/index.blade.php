@@ -6,13 +6,13 @@
     <div class="row">
         <div class="four col-md-3">
             <div class="counter-box">
-                <i class="fa fa-thumbs-o-up"></i>
+                <i class="fa fa-rocket"></i>
                 <p>@lang('messages.WeHave') {{$viewData['totalInventory']}} @lang('messages.rockets').</p>
             </div>
         </div>
         <div class="four col-md-3">
             <div class="counter-box">
-                <i class="fa fa-group"></i>
+                <i class="fa fa-wallet"></i>
                 <p>@lang('messages.WeHave') ${{ number_format($viewData['totalValueOfInventory'], 2) }} @lang('messages.DollarsOnRockets').</p>
             </div>
         </div>
@@ -40,21 +40,22 @@
                 <a href="{{ route('admin.product.index') }}" class="btn btn-secondary">@lang('messages.list')</a>
             </div>
         </div>
+
         <div class="col-md-6">
-          <div class="user-container">
-              <h3>@lang('messages.users')</h3>
-              @foreach($viewData['usersPreview'] as $user)
-                  <p class="user-item">{{ $user->getId() }} - {{ $user->getName() }}/ {{ $user->getEmail() }}</p>
-              @endforeach
-              <div>
-                  <div class="filters breadcrumbs analytics">
-                      <div class="btn btn-primary">
-                          <a href="{{ route('admin.users.index') }}">@lang('messages.ListUsers')</a>
-                      </div>
-                  </div>
-              </div>
+            <div class="user-container">
+                <h3>@lang('messages.users')</h3>
+                @foreach($viewData['usersPreview'] as $user)
+                    <p class="user-item">{{ $user->getId() }} - {{ $user->getName() }}/ {{ $user->getEmail() }}</p>
+                @endforeach
+                <div>
+                    <div class="filters breadcrumbs analytics">
+                        <div class="btn btn-primary">
+                            <a href="{{ route('admin.users.index') }}">@lang('messages.ListUsers')</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </div>
     </div>
 </div>
 </div>

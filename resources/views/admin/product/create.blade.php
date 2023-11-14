@@ -2,8 +2,9 @@
 @section('title', $viewData['title'])
 @section('content')
 <div class="container">
+    <h2>Crear Nuevo Producto</h2>
     <div class="row justify-content-center align-items-center mt-5">
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="card custom-card create">
                 <div class="card-body">
                     <h5 class="card-title">@lang('messages.CreateNewRocket')</h5>
