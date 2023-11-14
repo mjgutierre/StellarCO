@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Symfony\Component\HttpFoundation\Response;
 
 class LoginController extends Controller
 {
@@ -37,4 +39,17 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    // app/Http/Controllers/Auth/LoginController.php
+
+    protected function authenticated(Request $request, $user):Response
+    {
+        if ($user->getRole() === 'admin') {
+            return redirect('/admin');
+        } else {
+            return redirect('/');
+        }
+    }
+
 }
+

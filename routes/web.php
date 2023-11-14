@@ -44,8 +44,6 @@ Route::get('/orders', 'App\Http\Controllers\OrderController@index')->name('order
 //PROFILE
 Route::get('/profile', 'App\Http\Controllers\ProfileController@index')->name('profile.index');
 
-//ADMIN
-// Route::middleware('admin')->group(function () {
 //ADMIN-STATISTICS
 Route::get('/admin', 'App\Http\Controllers\Admin\AdminStatisticsController@index')->name('admin.statistics.index');
 //ADMIN-PRODUCTS
