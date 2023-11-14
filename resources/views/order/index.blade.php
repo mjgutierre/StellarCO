@@ -23,7 +23,7 @@
     </div>
     @empty
     <div class="col-12">
-        <p class="text-center text-muted">@lang('messages.NoElementsInCart')</p>
+        <p class="text-center text-muted">@lang('messages.noOrders')</p>
     </div>
     @endforelse
 </div>

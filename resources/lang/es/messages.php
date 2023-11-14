@@ -101,4 +101,5 @@ return [
     'checkout' => 'Checkout',
     'noProductsInCart' => 'No hay productos en el carrito',
     'purchaseSuccessful' => 'Compra exitosa',
+    'noOrders' => 'No hay ordenes',
 ];
