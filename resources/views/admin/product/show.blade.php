@@ -44,7 +44,7 @@
                         <div class="mb-2">
                             <label for="description" class="form-label">@lang('messages.description'):</label>
                             <input type="text" name="description" id="description" class="form-control" value="{{ $viewData['product']->getDescription() }}" required>
-                        </div>
+                          </div>
                         <div class="mb-2">
                             <label for="price" class="form-label">@lang('messages.price'):</label>
                             <input type="number" name="price" id="price" class="form-control" value="{{ $viewData['product']->getPrice() }}" required>
