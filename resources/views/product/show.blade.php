@@ -34,7 +34,7 @@
       </div>
 
       <div>
-        <h3>@lang('messages.Reviews')</h3>
+        <h3 class="review-text">@lang('messages.Reviews')</h3>
         @foreach($viewData["product"]->getReviews() as $review)
         <div class="card review-card">
           <div class="card-header">
