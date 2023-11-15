@@ -138,7 +138,7 @@ class Product extends Model
             'price' => 'required|numeric|gt:0',
             'quantity' => 'required|numeric|gt:0',
             'location' => 'required|max:255',
-            'image' => 'file|image|mimes:png|max:4096',
+            'image' => 'file|mimetypes:image/jpeg,image/png,image/gif|max:4096',
         ]);
     }
 }

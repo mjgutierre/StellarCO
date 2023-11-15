@@ -16,7 +16,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">@lang('messages.description')</label>
-                            <textarea class="form-control" id="description" name="description" rows="3" value="{{ old('description') }}" placeholder="Ingrese la descripcion" required></textarea>
+                            <input class="form-control" id="description" name="description" value="{{ old('description') }}" placeholder="Ingrese la descripcion" required></input>
                         </div>
                         <div class="mb-3">
                             <label for="price" class="form-label">@lang('messages.price')</label>

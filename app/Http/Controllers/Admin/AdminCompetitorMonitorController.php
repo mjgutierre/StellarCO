@@ -16,21 +16,21 @@ class AdminCompetitorMonitorController extends Controller
         // TODO: delete this when rewady to use
         $viewData['products'] = [];
 
-        // $apiUrl = env('COMPETITOR_URL') . '/api/products';
+        $apiUrl = env('COMPETITOR_URL') . '/api/products';
 
-        // $response = Http::get($apiUrl);
+        $response = Http::get($apiUrl);
 
-        // if ($response->successful()) {
-        //     $data = $response->json();
+        if ($response->successful()) {
+            $data = $response->json();
 
-        //     if (isset($data['data']) && is_array($data['data'])) {
-        //         $viewData['products'] = $data['data'];
-        //     } else {
-        //         $viewData['error'] = 'Error on competitors api'; 
-        //     }
-        // } else {
-        //   $viewData['error'] = trans('messages.errorOnApi');
-        // }
+            if (isset($data['data']) && is_array($data['data'])) {
+                $viewData['products'] = $data['data'];
+            } else {
+                $viewData['error'] = 'Error on competitors api'; 
+            }
+        } else {
+          $viewData['error'] = trans('messages.errorOnApi');
+        }
 
         return view('admin.competitorMonitor.index')->with('viewData', $viewData);
     }
