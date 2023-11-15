@@ -11,13 +11,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                  <div class="product-card">
+                  <div class="product-card-admin">
                     <div class="product-image">
-                      <img src="{{ $viewData['product']->getImage() }}" class="img-fluid w-100" alt="{{ $viewData['product']->getName() }}">
+                      <img src="{{ $viewData['product']->getImage() }}" class="product-img" alt="{{ $viewData['product']->getName() }}">
                     </div>
                   </div>
                   <div>
-                    <h3>@lang('messages.Reviews')</h3>
+                    <h3 class="review-text" >@lang('messages.Reviews')</h3>
                     @foreach($viewData["product"]->getReviews() as $review)
                       <div class="review">
                         <p>@lang('messages.title'): {{ $review->getTitle() }}</p>
