@@ -27,7 +27,7 @@ RUN composer install \
 # Crear enlaces simbólicos para storage
 #RUN php artisan storage:link 
 # Configurar permisos adecuados para la carpeta storage
-RUN chmod -R 777 storage
+#RUN chmod -R 777 storage
 # Habilitar mod_rewrite para Apache
 RUN a2enmod rewrite
 #RUN service apache2 restart
