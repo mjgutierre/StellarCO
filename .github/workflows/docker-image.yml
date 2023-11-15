@@ -1,20 +1,27 @@
-FROM php:8.1.4-apache
-RUN apt-get update -y && apt-get install -y openssl zip unzip git 
-RUN docker-php-ext-install pdo_mysql
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-COPY . /var/www/html
-COPY ./public/.htaccess /var/www/html/.htaccess
-WORKDIR /var/www/html
-RUN composer install \
-    --ignore-platform-reqs \
-    --no-interaction \
-    --no-plugins \
-    --no-scripts \
-    --prefer-dist
+name: Docker Image CI
 
-RUN php artisan key:generate
-RUN php artisan migrate --force
-RUN php artisan storage:link 
-RUN chmod -R 777 storage
-RUN a2enmod rewrite
-RUN service apache2 restart
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker login
+      env:
+        DOCKER_USER: ${{secrets.DOCKERHUB_USER}}
+        DOCKER_PASS: ${{secrets.DOCKERHUB_PASS}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASS
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag majog221/stellarco:latest
+      
+    - name: Docker Push
+      run: docker push majog221/stellarco
