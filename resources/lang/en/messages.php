@@ -105,4 +105,10 @@ return [
   'userList' => 'User List',
   'createNewProduct' => 'Create New Product',
   'errorOnApi' => 'Error on API',
+  'customize' => 'Customize',
+  'designYourRocket' => 'Design your Rocket',
+  'designDescription' => 'Provide a description for the AI to create a custom design for your rocket.',
+  'generateDesign' => 'Generate design',
+  'generatedDesign' => 'Generated Design',
+  'placeholderDesign' => 'E.g., I want a galaxy theme with bright stars and a crescent moon.',
 ];

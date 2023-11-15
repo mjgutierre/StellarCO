@@ -105,4 +105,10 @@ return [
     'userList' => 'Lista de Usuarios',
     'createNewProduct' => 'Crear Nuevo Producto',
     'errorOnApi' => 'Error en la API',
+    'customize' => 'Personalizar',
+    'designYourRocket' => 'Diseña tu cohete',
+    'designDescription' => 'Proporcione una descripción para que la IA cree un diseño personalizado para su cohete.',
+    'generateDesign' => 'Genera tu diseño',
+    'generatedDesign' => 'Diseño generado',
+    'placeholderDesign' => 'Por ejemplo, quiero un tema de galaxia con estrellas brillantes y una luna creciente.',
 ];

@@ -14,17 +14,17 @@
                     <div class="user-profile-info">
                         <div class="user-profile-item">
                             <i class="fas fa-user user-profile-icon"></i>
-                            <label for="name" class="form-label">Nombre</label>
+                            <label for="name" class="form-label">@lang('messages.name')</label>
                             <div class="user-profile-value">{{ $viewData['user']->getName() }}</div>
                         </div>
                         <div class="user-profile-item">
                             <i class="fas fa-envelope user-profile-icon"></i>
-                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <label for="email" class="form-label">@lang('messages.mail')</label>
                             <div class="user-profile-value">{{ $viewData['user']->getEmail() }}</div>
                         </div>
                         <div class="user-profile-item">
                             <i class="fas fa-wallet user-profile-icon"></i>
-                            <label for="balance" class="form-label">Saldo</label>
+                            <label for="balance" class="form-label">@lang('messages.AccountBalance')</label>
                             <div type="text" class="user-profile-value">${{ number_format($viewData['user']->getBalance(), 2) }}</div>
                         </div>
                     </div>

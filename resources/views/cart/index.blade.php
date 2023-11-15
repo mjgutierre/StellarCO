@@ -14,7 +14,7 @@
 @section('content')
 <div class="shopping-cart">
     <div class="row">
-        <h2>Carrito</h2>
+        <h2>@lang('messages.cart')</h2>
         @forelse ($viewData["products"] as $product)
         <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
@@ -31,7 +31,7 @@
                                 <button type="submit" class="btn btn-sm btn-outline-danger">@lang('messages.delete')</button>
                             </form>
                         </div>
-                        <a href="{{ route('customization.index', ['id'=> $product->getId()]) }}">Customize</a>
+                        <a href="{{ route('customization.index', ['id'=> $product->getId()]) }}">@lang('messages.customize')</a>
                     </div>
                 </div>
             </div>

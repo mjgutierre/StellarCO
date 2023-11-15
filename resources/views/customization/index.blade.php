@@ -24,16 +24,16 @@
                     <form action="{{ route('customization.generate') }}" method="post">
                         @csrf
                         <div class="design-prompt">
-                            <h3>Design your Rocket</h3>
-                            <p>Provide a description for the AI to create a custom design for your rocket.</p>
-                            <textarea name="designDescription" id="designDescription" class="form-control" rows="4" placeholder="E.g., I want a galaxy theme with bright stars and a crescent moon."></textarea>
+                            <h3>@lang('messages.designYourRocket')</h3>
+                            <p>@lang('messages.designDescription')</p>
+                            <textarea name="designDescription" id="designDescription" class="form-control" rows="4" placeholder= "@lang('messages.placeholderDesign')"></textarea>
                         </div>
                         <input type="hidden" name="productId" value="{{ $viewData['product']->getId() }}">
-                        <button type="submit" class="btn btn-primary mt-3">Generate Design</button>
+                        <button type="submit" class="btn btn-primary mt-3">@lang('messages.generateDesign')</button>
                     </form>
                     @if($viewData['generatedImageiUrl'] != '')
                       <div class="generated-design mt-4">
-                          <h4>Generated Design</h4>
+                          <h4>@lang('messages.generatedDesign')</h4>
                           <img id="generatedImage" src="{{ $viewData['generatedImageiUrl'] }}" alt="Generated design by AI" class="img-fluid w-100">
                       </div>
                     @endif

@@ -3,7 +3,7 @@
 @section('title', $viewData['title'])
 @section('content')
 <div class="container mt-5 orders-page">
-    <h2>@lang('messages.orders')</h2>
+    <h2>@lang('messages.order')</h2>
     <div class="row">
         @foreach ($viewData["orders"] as $order)
         <div class="col-md-4 d-flex align-items-stretch">
