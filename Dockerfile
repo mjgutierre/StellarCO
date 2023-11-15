@@ -20,7 +20,7 @@ RUN composer install \
     --prefer-dist
 
 # Generar clave de la aplicación
-RUN php artisan key:generate
+#RUN php artisan key:generate
 # Ejecutar migraciones
 RUN php artisan migrate --force
 # Crear enlaces simbólicos para storage
