@@ -19,15 +19,21 @@ RUN composer install \
     --no-scripts \
     --prefer-dist
 
-COPY .env.example .env
+#COPY .env.example .env
 # Generar clave de la aplicación
-RUN php artisan key:generate
+#RUN php artisan key:generate
 # Ejecutar migraciones
-RUN php artisan migrate --force
+#RUN php artisan migrate --force
 # Crear enlaces simbólicos para storage
-RUN php artisan storage:link 
+#RUN php artisan storage:link 
 # Configurar permisos adecuados para la carpeta storage
-RUN chmod -R 777 storage
+#RUN chmod -R 777 storage
 # Habilitar mod_rewrite para Apache
 RUN a2enmod rewrite
-RUN service apache2 restart
+#RUN service apache2 restart
+
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
+CMD ["/start.sh"]
+
