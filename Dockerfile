@@ -15,6 +15,7 @@ WORKDIR /var/www/html
 RUN composer install \
     --ignore-platform-reqs \
     --no-interaction \
+    --no-scripts\
     --no-plugins \
     --prefer-dist
 
